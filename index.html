@@ -16,15 +16,15 @@
   <meta property="og:image" content="https://waiacan.com/images/waiacan-og-image.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="favicon.ico" sizes="48x48">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="favicon.ico?v=2" sizes="48x48">
+  <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
   <link rel="manifest" href="site.webmanifest">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=2">
+  <link rel="stylesheet" href="css/styles.css?v=4">
 
   <script type="application/ld+json">
   {
@@ -64,7 +64,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="./" class="brand" aria-label="WAIACAN home">
-        <img src="images/logo/waiacan-wordmark-full-color.svg" alt="WAIACAN" width="835" height="133">
+        <img src="images/logo/waiacan-wordmark-header.svg?v=2" alt="WAIACAN" width="900" height="206">
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
         <span></span><span></span>
@@ -85,7 +85,8 @@
       <div class="container hero-grid">
         <div class="hero-content">
           <p class="eyebrow">Business Innovation Powered by AI</p>
-          <h1>Discover What You Can <span class="text-accent">Achieve.</span></h1>
+          <!-- "Achieve" is the real heading text; main.js turns it into a vertical word rotator. -->
+          <h1>Discover What You Can <br class="br-mobile"><span class="text-accent rotator" data-words="Achieve,Build,Automate,Create,Optimize">Achieve</span><span class="text-accent">.</span></h1>
           <p class="hero-lead">Practical AI, automation, and business innovation solutions.</p>
           <p class="hero-description">We help businesses solve complex challenges, eliminate inefficiencies, and unlock new opportunities through artificial intelligence, data, and technology. From immediate problem-solving to long-term process optimization, we turn business challenges into practical, scalable solutions.</p>
           <div class="hero-actions">
@@ -331,6 +332,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=2" defer></script>
+  <script src="js/main.js?v=3" defer></script>
 </body>
 </html>

@@ -34,6 +34,58 @@
     onScroll();
   }
 
+  // Hero word rotator: slides the accent word up through data-words, looping back to the first.
+  // The original word stays as screen-reader text so the heading still reads "…Can Achieve."
+  // Skipped entirely for reduced-motion users, who just see the static first word.
+  var rotator = document.querySelector('.rotator[data-words]');
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (rotator && !reduceMotion) {
+    var words = rotator.getAttribute('data-words').split(',');
+    var track = document.createElement('span');
+    track.className = 'rotator-track';
+    track.setAttribute('aria-hidden', 'true');
+    // Repeat the first word at the end so the last step slides up into it seamlessly.
+    words.concat(words[0]).forEach(function (w) {
+      var s = document.createElement('span');
+      s.textContent = w;
+      track.appendChild(s);
+    });
+    var label = document.createElement('span');
+    label.className = 'sr-only';
+    label.textContent = rotator.textContent;
+    rotator.textContent = '';
+    rotator.appendChild(label);
+    rotator.appendChild(track);
+    rotator.classList.add('is-ready');
+
+    var items = track.children;
+    var index = 0;
+    var fitWidth = function () {
+      rotator.style.width = items[index].offsetWidth + 'px';
+    };
+    fitWidth();
+    window.addEventListener('resize', fitWidth);
+    // Webfont swap changes word widths after first paint.
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitWidth);
+
+    setInterval(function () {
+      if (document.hidden) return;
+      index += 1;
+      track.style.transform = 'translateY(' + (-1.2 * index) + 'em)';
+      fitWidth();
+      if (index === words.length) {
+        // On the duplicate first word: jump back to the real one without animating.
+        setTimeout(function () {
+          track.style.transition = 'none';
+          index = 0;
+          track.style.transform = 'translateY(0)';
+          track.offsetHeight; // flush so the next change animates again
+          track.style.transition = '';
+        }, 650);
+      }
+    }, 2400);
+  }
+
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 

@@ -12,9 +12,9 @@ Plain HTML, CSS and vanilla JS. No build step: what's in this folder is what get
 | `js/main.js` | Mobile menu, header border on scroll, footer year, contact form submit |
 | `thanks.html` | Confirmation page after a no-JS form submission (`noindex`) |
 | `404.html` | Not-found page (styles inlined, since it's served at any missing path) |
-| `images/logo/` | Web copies of the logos (horizontal, stacked, icon × full color / white / black; wordmark used in the header) |
+| `images/logo/` | Web copies of the logos (horizontal, stacked, icon × full color / white / black; `waiacan-wordmark-header.svg` is the wordmark with the icon enlarged, used in the nav) |
 | `images/waiacan-og-image.png` | 1200×630 social share image |
-| `favicon.ico`, `favicon.svg`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` | Favicons (yellow background) |
+| `favicon.ico`, `favicon.svg`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` | Favicons: the original icon (same paths and stroke weights as `Waiacan_Icon_Black.svg`) on a yellow rounded square. `apple-touch-icon.png` is square because iOS rounds it itself |
 | `site.webmanifest`, `robots.txt`, `sitemap.xml` | Browser/SEO metadata |
 | `.nojekyll` | Tells GitHub Pages to serve files as-is |
 

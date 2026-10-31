@@ -219,7 +219,7 @@ ul, ol {
 }
 
 .brand img {
-  height: 26px;
+  height: 40px; /* letters stay 26px tall; the extra height is the larger icon */
   width: auto;
 }
 
@@ -290,6 +290,44 @@ ul, ol {
   font-weight: 600;
   color: var(--black);
   margin-bottom: 20px;
+}
+
+/*
+  Hero word rotator (built by main.js). The window is one line tall with a little extra
+  room below so descenders (the "p" in Optimize) aren't clipped; the negative margin
+  gives that room back so the line height doesn't change.
+*/
+.rotator.is-ready {
+  display: inline-block;
+  vertical-align: top;
+  height: 1.2em;
+  margin-bottom: -0.1em;
+  overflow: hidden;
+  transition: width 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.rotator-track {
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.rotator-track > span {
+  display: block;
+  width: max-content;
+  height: 1.2em;
+}
+
+/* On phones and tablets (≤900px) the rotating word gets its own line, so longer words never re-wrap the heading. */
+.br-mobile { display: none; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .hero-description {
@@ -567,6 +605,8 @@ ul, ol {
 
   .nav-toggle { display: block; }
 
+  .br-mobile { display: inline; }
+
   .site-nav {
     position: absolute;
     top: var(--header-height);
@@ -607,7 +647,7 @@ ul, ol {
     --header-height: 68px;
   }
 
-  .brand img { height: 22px; }
+  .brand img { height: 34px; }
 
   .hero { padding: 56px 0 72px; }
   .hero-actions .btn { width: 100%; }
