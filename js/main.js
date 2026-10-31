@@ -125,10 +125,17 @@
             '<p>We\'ll get back to you shortly at the email you provided.</p>' +
             '</div>';
         })
-        .catch(function () {
+        .catch(function (err) {
+          // Keep FormSubmit's reason in the console; it's the only clue when sends fail.
+          console.warn('Contact form:', err && err.message);
           button.disabled = false;
           button.innerHTML = buttonHtml;
           status.classList.add('is-error');
+          // Until the form is activated, FormSubmit rejects sends and emails an activation link instead.
+          if (err && /activat/i.test(err.message)) {
+            status.textContent = 'This form is waiting for activation. Please check the santiago@waiacan.com inbox for the FormSubmit activation email.';
+            return;
+          }
           status.innerHTML = 'Something went wrong sending your message. Please try again or email us at ' +
             '<a href="mailto:santiago@waiacan.com">santiago@waiacan.com</a>.';
         });
