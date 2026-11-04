@@ -1,17 +1,58 @@
 # WAIACAN website
 
-Static one-page site for **WAIACAN — Business Innovation Powered by AI**.
-Plain HTML, CSS and vanilla JS. No build step: what's in this folder is what gets served.
+Static one-page site for **WAIACAN — Business Innovation Powered by AI**, in English and Spanish.
+Plain HTML, CSS and vanilla JS. One small Python script generates the two language versions;
+everything else in this folder is served as-is.
+
+## Languages
+
+| URL | Language | Who sees it |
+| --- | --- | --- |
+| `https://waiacan.com/` | English | Everyone outside Colombia (also the `x-default`) |
+| `https://waiacan.com/es/` | Spanish | Visitors in Colombia |
+
+`js/lang.js` handles the routing (same IP approach as sweat440.com, via the free GeoJS API):
+- Only the English home page redirects, and only to Spanish, when the visitor's IP is in
+  Colombia. The Spanish page never redirects, so a shared `/es/` link always opens in Spanish.
+- The EN/ES switch (header and footer) is remembered in the browser and beats the IP check.
+- The redirect keeps the query string and `#section`, so UTM tags survive.
+- Crawlers aren't redirected; both pages are indexed via `hreflang` tags and `sitemap.xml`.
+- **Test it:** add `?country=CO` (or `?country=US`) to fake the visitor's country for the
+  session. A saved EN/ES choice wins, so clear site data to start over.
+
+## Editing text (build step)
+
+`index.html`, `es/index.html`, `thanks.html` and `es/thanks.html` are **generated** — don't
+edit them by hand; the next build overwrites them.
+
+| Source | Generates |
+| --- | --- |
+| `_src/template.html` (layout) + `_src/content/en.json` | `index.html` |
+| `_src/template.html` + `_src/content/es.json` | `es/index.html` |
+| `_src/thanks-template.html` + `en.json` / `es.json` | `thanks.html` / `es/thanks.html` |
+
+```bash
+python _src/build.py
+```
+
+- Change text in the two JSON files (same keys in both), layout in the templates.
+- The build stops with a message if a key is missing from a language, a value contains a
+  straight double quote (use “ ” instead), or a `{{placeholder}}` is left over.
+- `h1_em` in each JSON sizes the hero title so line 1 fits on desktop; if you change the
+  title, it may need adjusting (it's the width of the longest title line, in em, plus ~0.5).
+- Commit the regenerated HTML together with the source change.
 
 ## Structure
 
 | File | What it is |
 | --- | --- |
-| `index.html` | The whole site (Hero, Approach, Value Proposition, Expertise, Why, About, Contact form) |
+| `index.html`, `es/index.html` | The site in English / Spanish (generated, see above) |
+| `_src/` | Templates, text per language, and `build.py` |
 | `css/styles.css` | All styles. Brand colors, fonts and spacing are CSS variables in `:root` |
-| `js/main.js` | Mobile menu, header border on scroll, footer year, contact form submit |
-| `thanks.html` | Confirmation page after a no-JS form submission (`noindex`) |
-| `404.html` | Not-found page (styles inlined, since it's served at any missing path) |
+| `js/main.js` | Mobile menu, header border on scroll, hero word rotator, footer year, contact form submit. UI text comes from `data-*` attributes, so it serves both languages |
+| `js/lang.js` | Colombia → Spanish routing and the remembered EN/ES choice |
+| `thanks.html`, `es/thanks.html` | Confirmation page after a no-JS form submission (`noindex`, generated) |
+| `404.html` | Not-found page in both languages (styles inlined, since it's served at any missing path) |
 | `images/logo/` | Web copies of the logos (horizontal, stacked, icon × full color / white / black; `waiacan-wordmark-header.svg` is the wordmark with the icon enlarged, used in the nav) |
 | `images/waiacan-og-image.png` | 1200×630 social share image |
 | `favicon.ico`, `favicon.svg`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` | Favicons: the original icon (same paths and stroke weights as `Waiacan_Icon_Black.svg`) on a yellow rounded square. `apple-touch-icon.png` is square because iOS rounds it itself |
@@ -26,7 +67,7 @@ logos here have a tightened viewBox (less empty padding) so they size predictabl
 - Colors: Yellow `#FFB900`, Black `#0A0A0A`, White, Soft Gray `#F5F5F5`, Medium Gray `#6B7280`, Light Gray `#E5E7EB`.
 - Roughly 70% white/light gray, 20% black, 10% yellow. Yellow marks actions and key ideas only.
 - Accent text on white uses the darker `--yellow-text` (`#A87600`) for legibility; bright yellow text only on black.
-- Headings/buttons/labels: Space Grotesk. Body: Inter.
+- Headings/buttons/labels: Nunito (closest web font to the wordmark lettering). Body: Inter.
 
 ## Contact form
 
@@ -38,10 +79,11 @@ email itself, so a forwarding service is required.
   email to santiago@waiacan.com. Click the link in it, or nothing gets delivered.
 - After activation, FormSubmit offers a random alias string to use instead of the email
   address in the form `action`, so the address isn't in the page source. Replace
-  `santiago@waiacan.com` in the form's `action` in `index.html` with that alias if you want this.
+  `santiago@waiacan.com` in the form's `action` in `_src/template.html` with that alias and rebuild.
 - With JS, `js/main.js` posts to FormSubmit's AJAX endpoint and shows a thank-you message in
-  place. Without JS, the plain POST redirects to `thanks.html` (set by the `_next` field,
-  which assumes `https://waiacan.com/`).
+  place. Without JS, the plain POST redirects to `thanks.html` / `es/thanks.html` (set by the
+  `_next` field, which assumes `https://waiacan.com/`).
+- Each email includes a `language` field (`en`/`es`); Spanish inquiries have “(ES)” in the subject.
 - Spam: a hidden honeypot field (`_honey`). If spam becomes a problem, remove the
   `_captcha=false` field to turn on FormSubmit's captcha page (only applies to the no-JS path).
 - The "Prefer email?" link and footer link are plain `mailto:` links to the same address.
@@ -67,6 +109,6 @@ If the domain changes, update them together.
 
 ## When editing
 
-- Bump the `?v=` query on `css/styles.css` / `js/main.js` in `index.html` after changing them, so visitors don't get a stale cached copy.
+- Bump the `?v=` query on `css/styles.css` / `js/*.js` in `_src/template.html` after changing them, then rebuild, so visitors don't get a stale cached copy.
 - Update `<lastmod>` in `sitemap.xml` after content changes.
-- Check at 375px wide and desktop before publishing.
+- Check both languages at 375px wide and desktop before publishing.

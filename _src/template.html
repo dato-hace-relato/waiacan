@@ -1,0 +1,354 @@
+<!doctype html>
+<!--
+  GENERATED FILE: do not edit index.html or es/index.html directly.
+  Source: _src/template.html (layout) + _src/content/{en,es}.json (text).
+  Rebuild with: python _src/build.py
+-->
+<html lang="{{lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}">
+  <link rel="canonical" href="{{url}}">
+  <link rel="alternate" hreflang="en" href="https://waiacan.com/">
+  <link rel="alternate" hreflang="es" href="https://waiacan.com/es/">
+  <link rel="alternate" hreflang="x-default" href="https://waiacan.com/">
+  <meta name="theme-color" content="#FFB900">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WAIACAN">
+  <meta property="og:locale" content="{{og_locale}}">
+  <meta property="og:title" content="{{og_title}}">
+  <meta property="og:description" content="{{og_description}}">
+  <meta property="og:url" content="{{url}}">
+  <meta property="og:image" content="https://waiacan.com/images/waiacan-og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="{{root}}favicon.ico?v=2" sizes="48x48">
+  <link rel="icon" href="{{root}}favicon.svg?v=2" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{root}}apple-touch-icon.png?v=2">
+  <link rel="manifest" href="{{root}}site.webmanifest">
+
+  <!-- Language routing (Colombia → Spanish). Runs before render so a redirect happens as early as possible. -->
+  <script src="{{root}}js/lang.js?v=2" data-page-lang="{{lang}}" data-alt-href="{{alt_href}}"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="{{root}}css/styles.css?v=11">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://waiacan.com/#organization",
+        "name": "WAIACAN",
+        "url": "https://waiacan.com/",
+        "logo": "https://waiacan.com/icon-512.png",
+        "email": "santiago@waiacan.com",
+        "founder": { "@type": "Person", "name": "Santiago Estrada" },
+        "address": { "@type": "PostalAddress", "addressCountry": "CO" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://waiacan.com/#website",
+        "url": "https://waiacan.com/",
+        "name": "WAIACAN",
+        "inLanguage": ["en", "es"],
+        "publisher": { "@id": "https://waiacan.com/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "url": "{{url}}",
+        "name": "{{meta_title}}",
+        "inLanguage": "{{lang}}",
+        "isPartOf": { "@id": "https://waiacan.com/#website" },
+        "about": { "@id": "https://waiacan.com/#organization" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">{{skip_link}}</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./" class="brand" aria-label="{{home_label}}">
+        <img src="{{root}}images/logo/waiacan-wordmark-header.svg?v=2" alt="WAIACAN" width="900" height="206">
+      </a>
+      <nav id="site-nav" class="site-nav" aria-label="{{nav_label}}">
+        <a href="#approach">{{nav_approach}}</a>
+        <a href="#expertise">{{nav_expertise}}</a>
+        <a href="#why">{{nav_why}}</a>
+        <a href="#about">{{nav_about}}</a>
+        <a href="#contact" class="btn btn-primary btn-sm">{{nav_cta}}</a>
+      </nav>
+      <div class="header-actions">
+        <a href="{{alt_href}}" class="lang-switch" hreflang="{{alt_lang}}" lang="{{alt_lang}}" data-set-lang="{{alt_lang}}" aria-label="{{alt_name}}">{{alt_label}}</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="{{menu_open}}" data-label-open="{{menu_open}}" data-label-close="{{menu_close}}">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow">{{hero_eyebrow}}</p>
+          <!-- The first word is the real heading text; main.js turns it into a vertical word rotator. -->
+          <h1 class="hero-title" style="--h1-em: {{h1_em}}">{{h1_line1}}<br> <span class="text-accent rotator" data-words="{{h1_words}}">{{h1_word_first}}</span> <br class="br-mobile">{{h1_with}} <span class="text-accent">{{h1_ai}}</span>.</h1>
+          <p class="hero-lead">{{hero_lead}}</p>
+          <p class="hero-description">{{hero_description}}</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">{{hero_cta}} <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <p class="hero-note">{{hero_note}}</p>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <img src="{{root}}images/logo/waiacan-icon-full-color.svg" alt="" width="375" height="427">
+        </div>
+      </div>
+    </section>
+
+    <!-- THE CHALLENGE -->
+    <section class="section section-light" id="challenge">
+      <div class="container split">
+        <div>
+          <h2>{{problem_title}}</h2>
+        </div>
+        <div class="prose">
+          <p>{{problem_p1}}</p>
+          <p>{{problem_p2}}</p>
+          <p class="callout">{{problem_p3}}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPROVE / EXPAND -->
+    <section class="section" id="value">
+      <div class="container">
+        <div class="section-head">
+          <h2>{{value_title}}</h2>
+        </div>
+        <div class="value-grid">
+          <article class="card">
+            <span class="card-label">{{value1_label}}</span>
+            <h3>{{value1_title}}</h3>
+            <p>{{value1_text}}</p>
+          </article>
+          <article class="card">
+            <span class="card-label">{{value2_label}}</span>
+            <h3>{{value2_title}}</h3>
+            <p>{{value2_text}}</p>
+          </article>
+          <article class="card">
+            <span class="card-label">{{value3_label}}</span>
+            <h3>{{value3_title}}</h3>
+            <p>{{value3_text}}</p>
+          </article>
+        </div>
+        <p class="value-cycle">{{value_cycle}}</p>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section class="section section-dark" id="approach">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">{{nav_approach}}</p>
+          <h2>{{approach_title}}</h2>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">01</span>
+            <h3>{{step1_title}}</h3>
+            <p>{{step1_text}}</p>
+          </li>
+          <li class="step">
+            <span class="step-num">02</span>
+            <h3>{{step2_title}}</h3>
+            <p>{{step2_text}}</p>
+          </li>
+          <li class="step">
+            <span class="step-num">03</span>
+            <h3>{{step3_title}}</h3>
+            <p>{{step3_text}}</p>
+          </li>
+        </ol>
+        <div class="section-cta">
+          <a href="#contact" class="btn btn-primary">{{approach_cta}} <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section class="section section-light" id="expertise">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">{{nav_expertise}}</p>
+          <h2>{{expertise_title}}</h2>
+        </div>
+        <div class="service-grid">
+          <article class="card">
+            <span class="card-num">01</span>
+            <h3>{{service1_title}}</h3>
+            <p>{{service1_text}}</p>
+          </article>
+          <article class="card">
+            <span class="card-num">02</span>
+            <h3>{{service2_title}}</h3>
+            <p>{{service2_text}}</p>
+          </article>
+          <article class="card">
+            <span class="card-num">03</span>
+            <h3>{{service3_title}}</h3>
+            <p>{{service3_text}}</p>
+          </article>
+          <article class="card">
+            <span class="card-num">04</span>
+            <h3>{{service4_title}}</h3>
+            <p>{{service4_text}}</p>
+          </article>
+          <article class="card">
+            <span class="card-num">05</span>
+            <h3>{{service5_title}}</h3>
+            <p>{{service5_text}}</p>
+          </article>
+          <a class="card card-cta" href="#contact">
+            <p>{{hero_note}}</p>
+            <span class="card-link">{{hero_cta}} <span aria-hidden="true">&rarr;</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY WAIACAN -->
+    <section class="section" id="why">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">{{nav_why}}</p>
+          <h2>{{why_title}}</h2>
+        </div>
+        <ul class="values">
+          <li>
+            <h3>{{why1_title}}</h3>
+            <p>{{why1_text}}</p>
+          </li>
+          <li>
+            <h3>{{why2_title}}</h3>
+            <p>{{why2_text}}</p>
+          </li>
+          <li>
+            <h3>{{why3_title}}</h3>
+            <p>{{why3_text}}</p>
+          </li>
+          <li>
+            <h3>{{why4_title}}</h3>
+            <p>{{why4_text}}</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section-light" id="about">
+      <div class="container split split-about">
+        <div class="about-visual" aria-hidden="true">
+          <img src="{{root}}images/logo/waiacan-logo-stacked-full-color.svg" alt="" width="609" height="566" loading="lazy">
+        </div>
+        <div>
+          <p class="eyebrow">{{nav_about}}</p>
+          <h2>{{about_title}}</h2>
+          <div class="prose">
+            <p>{{about_p1}}</p>
+            <p>{{about_p2}}</p>
+            <p>{{about_p3}}</p>
+            <p>{{about_p4}}</p>
+            <p>{{about_p5}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section-dark" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-intro">
+          <p class="eyebrow">{{contact_eyebrow}}</p>
+          <h2>{{contact_title}}</h2>
+          <p>{{contact_p1}}</p>
+          <p>{{contact_p2}}</p>
+          <p class="contact-email">{{contact_email_label}} <a href="mailto:santiago@waiacan.com">santiago@waiacan.com</a></p>
+        </div>
+
+        <!--
+          Static hosting can't send email, so submissions go through FormSubmit (formsubmit.co),
+          which forwards them to santiago@waiacan.com. The first submission triggers a one-time
+          activation email to that inbox; nothing is delivered until it's confirmed.
+          With JS, main.js posts to the /ajax/ endpoint and shows the result inline (messages
+          come from the data-msg-* attributes); without JS, the plain POST redirects via _next.
+        -->
+        <form class="contact-form" id="contact-form" action="https://formsubmit.co/santiago@waiacan.com" method="POST"
+              aria-label="{{form_label}}"
+              data-msg-sending="{{form_sending}}"
+              data-msg-success-title="{{form_success_title}}"
+              data-msg-success-body="{{form_success_body}}"
+              data-msg-error="{{form_error}}"
+              data-msg-activation="{{form_activation}}">
+          <input type="hidden" name="_subject" value="{{form_subject}}">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="{{url}}thanks.html">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="language" value="{{lang}}">
+          <!-- Honeypot: bots fill this, people never see it; FormSubmit drops those submissions. -->
+          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="field-row">
+            <div class="field">
+              <label for="cf-name">{{form_name}}</label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="cf-email">{{form_email}}</label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="cf-company">{{form_company}} <span class="optional">{{form_optional}}</span></label>
+            <input id="cf-company" name="company" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="cf-message">{{form_message}}</label>
+            <textarea id="cf-message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg">{{form_submit}} <span aria-hidden="true">&rarr;</span></button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="./" aria-label="{{home_label}}">
+        <img src="{{root}}images/logo/waiacan-wordmark-white.svg" alt="WAIACAN" width="835" height="133" class="footer-logo" loading="lazy">
+      </a>
+      <p class="footer-tagline">{{hero_eyebrow}}</p>
+      <p class="footer-meta">
+        <a href="mailto:santiago@waiacan.com">santiago@waiacan.com</a>
+        <a href="{{alt_href}}" hreflang="{{alt_lang}}" lang="{{alt_lang}}" data-set-lang="{{alt_lang}}">{{alt_name}}</a>
+        <span>&copy; <span id="year">2026</span> WAIACAN</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="{{root}}js/main.js?v=5" defer></script>
+</body>
+</html>

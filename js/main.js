@@ -1,6 +1,8 @@
 /*
   WAIACAN — site behavior.
-  Mobile nav toggle, header border on scroll, footer year. No dependencies.
+  Mobile nav toggle, header border on scroll, hero word rotator, footer year, contact form.
+  No dependencies. User-facing text comes from data-* attributes in the page, so the same
+  script serves the English and Spanish versions.
 */
 (function () {
   var toggle = document.querySelector('.nav-toggle');
@@ -9,7 +11,7 @@
 
   function setOpen(open) {
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    toggle.setAttribute('aria-label', toggle.getAttribute(open ? 'data-label-close' : 'data-label-open'));
     nav.classList.toggle('is-open', open);
   }
 
@@ -35,7 +37,7 @@
   }
 
   // Hero word rotator: slides the accent word up through data-words, looping back to the first.
-  // The original word stays as screen-reader text so the heading still reads "…Can Achieve."
+  // The original word stays as screen-reader text so the heading still reads as one sentence.
   // Skipped entirely for reduced-motion users, who just see the static first word.
   var rotator = document.querySelector('.rotator[data-words]');
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -96,6 +98,7 @@
     var status = form.querySelector('.form-status');
     var button = form.querySelector('button[type="submit"]');
     var buttonHtml = button.innerHTML;
+    var msg = function (name) { return form.getAttribute('data-msg-' + name) || ''; };
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -104,7 +107,7 @@
         return;
       }
       button.disabled = true;
-      button.textContent = 'Sending…';
+      button.textContent = msg('sending');
       status.textContent = '';
       status.classList.remove('is-error');
 
@@ -119,11 +122,17 @@
           });
         })
         .then(function () {
-          form.innerHTML =
-            '<div class="form-success" role="status">' +
-            '<h3>Thank you. We\'ve received your message.</h3>' +
-            '<p>We\'ll get back to you shortly at the email you provided.</p>' +
-            '</div>';
+          var box = document.createElement('div');
+          box.className = 'form-success';
+          box.setAttribute('role', 'status');
+          var title = document.createElement('h3');
+          title.textContent = msg('success-title');
+          var body = document.createElement('p');
+          body.textContent = msg('success-body');
+          box.appendChild(title);
+          box.appendChild(body);
+          form.innerHTML = '';
+          form.appendChild(box);
         })
         .catch(function (err) {
           // Keep FormSubmit's reason in the console; it's the only clue when sends fail.
@@ -133,11 +142,15 @@
           status.classList.add('is-error');
           // Until the form is activated, FormSubmit rejects sends and emails an activation link instead.
           if (err && /activat/i.test(err.message)) {
-            status.textContent = 'This form is waiting for activation. Please check the santiago@waiacan.com inbox for the FormSubmit activation email.';
+            status.textContent = msg('activation');
             return;
           }
-          status.innerHTML = 'Something went wrong sending your message. Please try again or email us at ' +
-            '<a href="mailto:santiago@waiacan.com">santiago@waiacan.com</a>.';
+          status.textContent = msg('error') + ' ';
+          var mail = document.createElement('a');
+          mail.href = 'mailto:santiago@waiacan.com';
+          mail.textContent = 'santiago@waiacan.com';
+          status.appendChild(mail);
+          status.appendChild(document.createTextNode('.'));
         });
     });
   }

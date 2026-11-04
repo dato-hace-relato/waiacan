@@ -1,17 +1,26 @@
 <!doctype html>
+<!--
+  GENERATED FILE: do not edit index.html or es/index.html directly.
+  Source: _src/template.html (layout) + _src/content/{en,es}.json (text).
+  Rebuild with: python _src/build.py
+-->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WAIACAN | Business Innovation Powered by AI</title>
-  <meta name="description" content="Practical AI, automation, and business innovation solutions. WAIACAN helps businesses solve complex challenges, eliminate inefficiencies, and unlock new opportunities.">
+  <meta name="description" content="Improve your operations, build new capabilities, and open new opportunities for growth. WAIACAN combines business expertise and AI to make it happen.">
   <link rel="canonical" href="https://waiacan.com/">
+  <link rel="alternate" hreflang="en" href="https://waiacan.com/">
+  <link rel="alternate" hreflang="es" href="https://waiacan.com/es/">
+  <link rel="alternate" hreflang="x-default" href="https://waiacan.com/">
   <meta name="theme-color" content="#FFB900">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="WAIACAN">
-  <meta property="og:title" content="WAIACAN | Discover What You Can Achieve.">
-  <meta property="og:description" content="Practical AI, automation, and business innovation solutions.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="WAIACAN | Discover What You Can Build with AI.">
+  <meta property="og:description" content="Improve your operations, build new capabilities, and open new opportunities for growth.">
   <meta property="og:url" content="https://waiacan.com/">
   <meta property="og:image" content="https://waiacan.com/images/waiacan-og-image.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -21,10 +30,13 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
   <link rel="manifest" href="site.webmanifest">
 
+  <!-- Language routing (Colombia → Spanish). Runs before render so a redirect happens as early as possible. -->
+  <script src="js/lang.js?v=2" data-page-lang="en" data-alt-href="es/"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=4">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="css/styles.css?v=11">
 
   <script type="application/ld+json">
   {
@@ -37,7 +49,7 @@
         "url": "https://waiacan.com/",
         "logo": "https://waiacan.com/icon-512.png",
         "email": "santiago@waiacan.com",
-        "slogan": "Discover What You Can Achieve.",
+        "founder": { "@type": "Person", "name": "Santiago Estrada" },
         "address": { "@type": "PostalAddress", "addressCountry": "CO" }
       },
       {
@@ -45,12 +57,14 @@
         "@id": "https://waiacan.com/#website",
         "url": "https://waiacan.com/",
         "name": "WAIACAN",
+        "inLanguage": ["en", "es"],
         "publisher": { "@id": "https://waiacan.com/#organization" }
       },
       {
         "@type": "WebPage",
         "url": "https://waiacan.com/",
         "name": "WAIACAN | Business Innovation Powered by AI",
+        "inLanguage": "en",
         "isPartOf": { "@id": "https://waiacan.com/#website" },
         "about": { "@id": "https://waiacan.com/#organization" }
       }
@@ -66,16 +80,19 @@
       <a href="./" class="brand" aria-label="WAIACAN home">
         <img src="images/logo/waiacan-wordmark-header.svg?v=2" alt="WAIACAN" width="900" height="206">
       </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-        <span></span><span></span>
-      </button>
       <nav id="site-nav" class="site-nav" aria-label="Main">
-        <a href="#approach">Approach</a>
-        <a href="#expertise">Expertise</a>
+        <a href="#approach">How We Work</a>
+        <a href="#expertise">What We Do</a>
         <a href="#why">Why WAIACAN</a>
         <a href="#about">About</a>
-        <a href="#contact" class="btn btn-primary btn-sm">Let's Talk</a>
+        <a href="#contact" class="btn btn-primary btn-sm">Let’s Talk</a>
       </nav>
+      <div class="header-actions">
+        <a href="es/" class="lang-switch" hreflang="es" lang="es" data-set-lang="es" aria-label="Español">ES</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu" data-label-open="Open menu" data-label-close="Close menu">
+          <span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -85,14 +102,14 @@
       <div class="container hero-grid">
         <div class="hero-content">
           <p class="eyebrow">Business Innovation Powered by AI</p>
-          <!-- "Achieve" is the real heading text; main.js turns it into a vertical word rotator. -->
-          <h1>Discover What You Can <br class="br-mobile"><span class="text-accent rotator" data-words="Achieve,Build,Automate,Create,Optimize">Achieve</span><span class="text-accent">.</span></h1>
-          <p class="hero-lead">Practical AI, automation, and business innovation solutions.</p>
-          <p class="hero-description">We help businesses solve complex challenges, eliminate inefficiencies, and unlock new opportunities through artificial intelligence, data, and technology. From immediate problem-solving to long-term process optimization, we turn business challenges into practical, scalable solutions.</p>
+          <!-- The first word is the real heading text; main.js turns it into a vertical word rotator. -->
+          <h1 class="hero-title" style="--h1-em: 11.9">Discover What You Can<br> <span class="text-accent rotator" data-words="Build,Achieve,Automate,Optimize,Create">Build</span> <br class="br-mobile">with <span class="text-accent">AI</span>.</h1>
+          <p class="hero-lead">Improve your operations, build new capabilities, and open new opportunities for growth.</p>
+          <p class="hero-description">We combine business expertise and technology to make it happen.</p>
           <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Discuss Your Business Challenge <span aria-hidden="true">&rarr;</span></a>
-            <a href="#approach" class="btn btn-secondary">Our Approach</a>
+            <a href="#contact" class="btn btn-primary">Let’s Talk About Your Business <span aria-hidden="true">&rarr;</span></a>
           </div>
+          <p class="hero-note">You don’t need to know the solution. Start with a challenge or an idea.</p>
         </div>
         <div class="hero-visual" aria-hidden="true">
           <img src="images/logo/waiacan-icon-full-color.svg" alt="" width="375" height="427">
@@ -100,102 +117,113 @@
       </div>
     </section>
 
-    <!-- OUR APPROACH -->
+    <!-- THE CHALLENGE -->
+    <section class="section section-light" id="challenge">
+      <div class="container split">
+        <div>
+          <h2>You know your business could do more. Where do you start?</h2>
+        </div>
+        <div class="prose">
+          <p>Your team spends too much time on manual tasks. Information is scattered across tools. Promising ideas stay on hold because they seem too expensive or complex to develop.</p>
+          <p>You know technology could help. But you need clarity on where to apply it, what investment makes sense, and how to put it to work.</p>
+          <p class="callout">At WAIACAN, we work with you to identify the most valuable opportunities and turn them into solutions your team can use.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPROVE / EXPAND -->
+    <section class="section" id="value">
+      <div class="container">
+        <div class="section-head">
+          <h2>Improve What You Do. Expand What You Can Do.</h2>
+        </div>
+        <div class="value-grid">
+          <article class="card">
+            <span class="card-label">Efficiency</span>
+            <h3>Do what you already do, better.</h3>
+            <p>Reduce manual work, errors, and delays. Connect your systems and simplify processes so your team can spend more time on work that creates value.</p>
+          </article>
+          <article class="card">
+            <span class="card-label">Capabilities</span>
+            <h3>Do what’s beyond your reach today.</h3>
+            <p>Put your information to work, explore scenarios, and build tools to make better decisions, personalize service, or respond to new needs.</p>
+          </article>
+          <article class="card">
+            <span class="card-label">Opportunities</span>
+            <h3>Turn new possibilities into business opportunities.</h3>
+            <p>Develop and test products, services, and experiences that previously required too much time, money, or complexity.</p>
+          </article>
+        </div>
+        <p class="value-cycle">An initial improvement can unlock new capabilities. Those capabilities can create new opportunities. And each opportunity brings something new to improve.</p>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
     <section class="section section-dark" id="approach">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Our Approach</p>
-          <h2>How We Turn Business Challenges Into <span class="text-accent">Scalable Solutions.</span></h2>
-          <p>We combine business expertise, analytical thinking, and modern technology to solve immediate challenges while building smarter, more efficient ways of working.</p>
+          <p class="eyebrow">How We Work</p>
+          <h2>A Clear Path From Idea to Everyday Use.</h2>
         </div>
         <ol class="steps">
           <li class="step">
             <span class="step-num">01</span>
-            <h3>Identify Challenges</h3>
-            <p class="step-tagline">Discover what's holding your business back.</p>
-            <p>Pinpoint inefficiencies, operational bottlenecks, disconnected systems, and opportunities for automation and innovation.</p>
+            <h3>Understand and Prioritize</h3>
+            <p>We learn about your goals and how your team works. Together, we identify opportunities and decide where to start based on impact, feasibility, and investment.</p>
           </li>
           <li class="step">
             <span class="step-num">02</span>
-            <h3>Implement Immediate Solutions</h3>
-            <p class="step-tagline">Solve real problems, fast.</p>
-            <p>Develop and implement practical solutions that address pressing business needs, using AI and modern technology to accelerate execution.</p>
+            <h3>Build and Test</h3>
+            <p>We design the solution, agree on scope, and define how to evaluate success. We build an initial version, test it with users, and refine it.</p>
           </li>
           <li class="step">
             <span class="step-num">03</span>
-            <h3>Design Improved Processes</h3>
-            <p class="step-tagline">Build better ways of working.</p>
-            <p>Redesign workflows, connect systems, automate repetitive tasks, and create tools that improve efficiency and decision-making.</p>
-          </li>
-          <li class="step">
-            <span class="step-num">04</span>
-            <h3>Build Scalable Solutions</h3>
-            <p class="step-tagline">Turn improvements into lasting capabilities.</p>
-            <p>Create sustainable systems and processes your team can manage, improve, and scale as your business grows.</p>
+            <h3>Implement and Adopt</h3>
+            <p>We introduce the solution into your operations and help your team make it part of their work. We measure results and agree on the support and improvements it needs.</p>
           </li>
         </ol>
-      </div>
-    </section>
-
-    <!-- OUR VALUE PROPOSITION -->
-    <section class="section" id="value">
-      <div class="container split">
-        <div>
-          <p class="eyebrow">Our Value Proposition</p>
-          <h2>We Bridge the Gap Between Business Challenges and Technology.</h2>
-        </div>
-        <div class="prose">
-          <p>Many businesses know they could operate more efficiently, make better decisions, or automate manual work. But identifying the right solutions and implementing them effectively can be difficult, expensive, and time-consuming.</p>
-          <p>At WAIACAN, we combine business strategy, data analysis, artificial intelligence, and hands-on execution to help organizations turn these opportunities into measurable improvements.</p>
-          <p>We work closely with your team to understand your challenges, identify the most valuable opportunities, and develop solutions tailored to your business.</p>
-          <p class="callout">Not technology for technology's sake. Practical innovation that creates business value.</p>
+        <div class="section-cta">
+          <a href="#contact" class="btn btn-primary">Let’s Discuss Your First Project <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
     </section>
 
-    <!-- OUR EXPERTISE -->
+    <!-- EXPERTISE -->
     <section class="section section-light" id="expertise">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Our Expertise</p>
+          <p class="eyebrow">What We Do</p>
           <h2>Technology That Works for Your Business.</h2>
-          <p>We focus on practical applications of technology that help organizations operate more efficiently, make smarter decisions, and unlock opportunities for growth.</p>
         </div>
         <div class="service-grid">
           <article class="card">
             <span class="card-num">01</span>
             <h3>AI &amp; Intelligent Automation</h3>
-            <p class="card-tagline">Reduce repetitive work. Unlock productivity.</p>
-            <p>Identify opportunities to use artificial intelligence and automation to streamline workflows, eliminate manual tasks, and improve operational efficiency.</p>
+            <p>Streamline repetitive tasks and make it easier to work with documents, inquiries, and information through practical AI and automation solutions.</p>
           </article>
           <article class="card">
             <span class="card-num">02</span>
             <h3>Data Analytics &amp; Business Intelligence</h3>
-            <p class="card-tagline">Turn data into better decisions.</p>
-            <p>Connect information across your business, develop reporting and analytics solutions, and uncover insights that support smarter decisions.</p>
+            <p>Connect your information sources and turn data into useful reports, metrics, and analysis that support better decisions.</p>
           </article>
           <article class="card">
             <span class="card-num">03</span>
             <h3>Business Process Optimization</h3>
-            <p class="card-tagline">Improve how your business works.</p>
-            <p>Analyze existing processes, identify bottlenecks, and redesign workflows to reduce complexity, improve productivity, and support sustainable growth.</p>
+            <p>Identify bottlenecks and redesign workflows to reduce complexity, improve productivity, and support growth.</p>
           </article>
           <article class="card">
             <span class="card-num">04</span>
             <h3>Custom Business Tools &amp; Integrations</h3>
-            <p class="card-tagline">Build the tools your business actually needs.</p>
-            <p>Develop practical digital solutions, internal applications, prototypes, and system integrations that solve specific business challenges.</p>
+            <p>Implement internal applications, custom tools, and integrations that address specific operational needs.</p>
           </article>
           <article class="card">
             <span class="card-num">05</span>
             <h3>Growth &amp; Marketing Technology</h3>
-            <p class="card-tagline">Build smarter systems for growth.</p>
-            <p>Combine customer acquisition strategy, analytics, automation, and technology to improve conversion, retention, and marketing effectiveness.</p>
+            <p>Connect strategy, data, and technology to improve customer acquisition, conversion, and retention.</p>
           </article>
           <a class="card card-cta" href="#contact">
-            <h3>Not sure where to start?</h3>
-            <p>You don't need to know the solution. Tell us about the challenge and we'll help you find it.</p>
-            <span class="card-link">Discuss Your Challenge <span aria-hidden="true">&rarr;</span></span>
+            <p>You don’t need to know the solution. Start with a challenge or an idea.</p>
+            <span class="card-link">Let’s Talk About Your Business <span aria-hidden="true">&rarr;</span></span>
           </a>
         </div>
       </div>
@@ -206,30 +234,24 @@
       <div class="container split">
         <div>
           <p class="eyebrow">Why WAIACAN</p>
-          <h2>Business Expertise Meets Modern Technology.</h2>
-          <p>Technology is only valuable when it solves the right problem.</p>
-          <p>Our approach combines strategic business thinking with practical execution, helping organizations innovate without unnecessary complexity.</p>
+          <h2>Business Expertise Meets Hands-On Execution.</h2>
         </div>
         <ul class="values">
           <li>
-            <h3>Business-First Thinking</h3>
-            <p>We start by understanding your business objectives, challenges, and opportunities before recommending technology.</p>
+            <h3>We Start With Your Business</h3>
+            <p>We understand your goals, processes, and opportunities before recommending a tool or solution.</p>
           </li>
           <li>
-            <h3>Practical Solutions</h3>
-            <p>We focus on actionable improvements, rapid experimentation, and measurable business outcomes.</p>
+            <h3>We Turn Ideas Into Tools You Can Use</h3>
+            <p>We combine analysis, design, and implementation to bring each project into everyday use.</p>
           </li>
           <li>
-            <h3>AI-Enabled Execution</h3>
-            <p>We leverage modern AI tools, automation, and development technologies to accelerate problem-solving and solution delivery.</p>
+            <h3>We Use AI to Accelerate Execution</h3>
+            <p>We use modern AI and development tools to build, test, and refine solutions.</p>
           </li>
           <li>
-            <h3>Collaborative Approach</h3>
-            <p>We work closely with your team, maintaining transparency, aligning with business priorities, and building solutions around your needs.</p>
-          </li>
-          <li>
-            <h3>Long-Term Value</h3>
-            <p>Our goal isn't simply to solve today's problem. It's to help your organization develop more efficient, scalable ways of working.</p>
+            <h3>We Work With Your Team</h3>
+            <p>We involve the people who will use the solution so it addresses their needs and fits into their work.</p>
           </li>
         </ul>
       </div>
@@ -242,14 +264,14 @@
           <img src="images/logo/waiacan-logo-stacked-full-color.svg" alt="" width="609" height="566" loading="lazy">
         </div>
         <div>
-          <p class="eyebrow">About WAIACAN</p>
-          <h2>Rooted in Colombia. Focused on What's Possible.</h2>
+          <p class="eyebrow">About</p>
+          <h2>Rooted in Colombia. Focused on What’s Possible.</h2>
           <div class="prose">
-            <p>WAIACAN is inspired by the <em>Guayacán</em>, a tree recognized for its vibrant yellow blossoms and deep roots in Colombia.</p>
-            <p>Our name also reflects a belief in the power of possibility: discovering what you can achieve when business knowledge, creativity, and technology come together.</p>
-            <p>We believe innovation should be accessible to businesses of all sizes, not just organizations with large technology departments or extensive budgets.</p>
-            <p>Based in Colombia, we bring an international perspective to helping companies solve problems, improve processes, and build smarter businesses.</p>
-            <p class="callout">Discover what you can achieve.</p>
+            <p>WAIACAN takes its name from the <em>guayacán</em>, a tree known for its vibrant yellow blossoms and deep roots in Colombia.</p>
+            <p>The name also evokes a question: what can you achieve when business knowledge, creativity, and technology come together?</p>
+            <p>WAIACAN was founded by Santiago Estrada, an administrative engineer with a master’s degree in entrepreneurship from Rotterdam School of Management and more than 15 years of experience in marketing, growth, and technology.</p>
+            <p>His background combines founding businesses and leading teams with developing business tools, data systems, and automations.</p>
+            <p>Based in Colombia, we bring an international perspective and a belief that practical technology should be accessible to more businesses.</p>
           </div>
         </div>
       </div>
@@ -260,9 +282,9 @@
       <div class="container contact-grid">
         <div class="contact-intro">
           <p class="eyebrow">Contact</p>
-          <h2>Let's Solve Your Next Business <span class="text-accent">Challenge.</span></h2>
-          <p>Tell us about a problem you're facing, a process you'd like to improve, or an opportunity you want to explore.</p>
-          <p>You don't need to know the solution. That's where we can help.</p>
+          <h2>Let’s Explore Your Next Business Challenge.</h2>
+          <p>Tell us about a process you want to improve, a limitation you want to overcome, or an opportunity you want to explore.</p>
+          <p>Our first conversation will help us understand your situation and see how we can help.</p>
           <p class="contact-email">Prefer email? <a href="mailto:santiago@waiacan.com">santiago@waiacan.com</a></p>
         </div>
 
@@ -270,14 +292,21 @@
           Static hosting can't send email, so submissions go through FormSubmit (formsubmit.co),
           which forwards them to santiago@waiacan.com. The first submission triggers a one-time
           activation email to that inbox; nothing is delivered until it's confirmed.
-          With JS, main.js posts to the /ajax/ endpoint and shows the result inline;
-          without JS, the plain POST below redirects to thanks.html via _next.
+          With JS, main.js posts to the /ajax/ endpoint and shows the result inline (messages
+          come from the data-msg-* attributes); without JS, the plain POST redirects via _next.
         -->
-        <form class="contact-form" id="contact-form" action="https://formsubmit.co/santiago@waiacan.com" method="POST">
+        <form class="contact-form" id="contact-form" action="https://formsubmit.co/santiago@waiacan.com" method="POST"
+              aria-label="Contact form"
+              data-msg-sending="Sending…"
+              data-msg-success-title="Thank you. We’ve received your message."
+              data-msg-success-body="We’ll get back to you shortly at the email you provided."
+              data-msg-error="Something went wrong sending your message. Please try again or email us at"
+              data-msg-activation="This form is waiting for activation. Please check the santiago@waiacan.com inbox for the FormSubmit activation email.">
           <input type="hidden" name="_subject" value="New inquiry from waiacan.com">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_next" value="https://waiacan.com/thanks.html">
           <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="language" value="en">
           <!-- Honeypot: bots fill this, people never see it; FormSubmit drops those submissions. -->
           <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
@@ -291,28 +320,15 @@
               <input id="cf-email" name="email" type="email" autocomplete="email" required>
             </div>
           </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="cf-company">Company <span class="optional">(optional)</span></label>
-              <input id="cf-company" name="company" type="text" autocomplete="organization">
-            </div>
-            <div class="field">
-              <label for="cf-topic">Area of interest <span class="optional">(optional)</span></label>
-              <select id="cf-topic" name="area_of_interest">
-                <option value="">Not sure yet</option>
-                <option>AI &amp; Intelligent Automation</option>
-                <option>Data Analytics &amp; Business Intelligence</option>
-                <option>Business Process Optimization</option>
-                <option>Custom Business Tools &amp; Integrations</option>
-                <option>Growth &amp; Marketing Technology</option>
-              </select>
-            </div>
+          <div class="field">
+            <label for="cf-company">Company <span class="optional">(optional)</span></label>
+            <input id="cf-company" name="company" type="text" autocomplete="organization">
           </div>
           <div class="field">
-            <label for="cf-message">Tell us about your challenge</label>
-            <textarea id="cf-message" name="message" rows="5" required placeholder="A problem you're facing, a process you'd like to improve, or an idea you want to explore."></textarea>
+            <label for="cf-message">What would you like to improve or make possible?</label>
+            <textarea id="cf-message" name="message" rows="5" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-lg">Discuss Your Challenge <span aria-hidden="true">&rarr;</span></button>
+          <button type="submit" class="btn btn-primary btn-lg">Let’s Talk <span aria-hidden="true">&rarr;</span></button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -327,11 +343,12 @@
       <p class="footer-tagline">Business Innovation Powered by AI</p>
       <p class="footer-meta">
         <a href="mailto:santiago@waiacan.com">santiago@waiacan.com</a>
+        <a href="es/" hreflang="es" lang="es" data-set-lang="es">Español</a>
         <span>&copy; <span id="year">2026</span> WAIACAN</span>
       </p>
     </div>
   </footer>
 
-  <script src="js/main.js?v=4" defer></script>
+  <script src="js/main.js?v=5" defer></script>
 </body>
 </html>

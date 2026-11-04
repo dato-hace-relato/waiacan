@@ -19,7 +19,7 @@
   --gray-dark-text: #B4B4B4;
   --gray-dark-line: #262626;
 
-  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-heading: 'Nunito', system-ui, sans-serif; /* closest web match to the WAIACAN wordmark */
   --font-body: 'Inter', system-ui, sans-serif;
 
   --radius-sm: 8px;
@@ -62,13 +62,13 @@ h1, h2, h3 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.1;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.01em;
   margin: 0 0 24px;
 }
 
 h1 { font-size: clamp(2.75rem, 6vw, 5.25rem); }
 h2 { font-size: clamp(2rem, 4vw, 3.25rem); }
-h3 { font-size: 1.3rem; letter-spacing: -0.02em; font-weight: 600; margin-bottom: 12px; }
+h3 { font-size: 1.3rem; letter-spacing: 0; font-weight: 700; margin-bottom: 12px; }
 
 p {
   margin: 0 0 20px;
@@ -214,9 +214,29 @@ ul, ol {
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 28px;
   height: var(--header-height);
 }
+.brand { margin-right: auto; }
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* EN/ES switch: shows the *other* language; picking it is remembered by lang.js. */
+.lang-switch {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 6px 10px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.lang-switch:hover { border-color: var(--black); background: var(--gray-50); }
 
 .brand img {
   height: 40px; /* letters stay 26px tall; the extra height is the larger icon */
@@ -231,6 +251,7 @@ ul, ol {
   font-weight: 500;
   font-size: 0.95rem;
 }
+.site-nav a { white-space: nowrap; }
 .site-nav a:not(.btn) {
   position: relative;
   padding: 4px 0;
@@ -282,7 +303,7 @@ ul, ol {
   align-items: center;
 }
 
-.hero-content { max-width: 780px; }
+.hero-content { max-width: none; } /* the title sizes itself to fit; see .hero-title */
 
 .hero-lead {
   font-family: var(--font-heading);
@@ -315,7 +336,20 @@ ul, ol {
   height: 1.2em;
 }
 
-/* On phones and tablets (≤900px) the rotating word gets its own line, so longer words never re-wrap the heading. */
+/*
+  Hero title, in the wordmark's font. Line 1 is fixed ("Discover What You Can"), line 2 is
+  "<word> with AI." Sized so the longest word still fits line 2; on phones "with AI."
+  drops to its own line (.br-mobile) so no word ever re-wraps the heading.
+*/
+.hero-title {
+  font-weight: 800;
+  /* Line 1 is ~11.4em wide in English; the calc keeps the widest line on one line next to
+     the hero icon (viewport − gutters − icon − gap, ÷ --h1-em) down to the 900px breakpoint.
+     --h1-em is set per language in _src/content/*.json, since line widths differ. */
+  font-size: clamp(2rem, calc((100vw - 390px) / var(--h1-em, 11.9)), 4.2rem);
+  letter-spacing: 0.01em;
+}
+
 .br-mobile { display: none; }
 
 .sr-only {
@@ -342,8 +376,13 @@ ul, ol {
   gap: 16px;
 }
 
+.hero-note {
+  margin: 16px 0 0;
+  font-size: 0.95rem;
+}
+
 .hero-visual img {
-  width: 340px;
+  width: 260px;
 }
 
 /* ---------- Services ---------- */
@@ -377,19 +416,13 @@ ul, ol {
   margin-bottom: 28px;
 }
 
-.card .card-tagline {
-  font-weight: 500;
-  color: var(--black);
-  margin-bottom: 12px;
-}
-
 .card-cta {
   background: var(--black);
   border-color: var(--black);
   color: var(--white);
   justify-content: flex-end;
 }
-.card-cta p { color: var(--gray-dark-text); }
+.card-cta p { font-size: 1.1rem; color: var(--white); }
 .card-link {
   margin-top: 24px;
   font-family: var(--font-heading);
@@ -397,13 +430,43 @@ ul, ol {
   color: var(--yellow);
 }
 
+/* ---------- Improve / Expand ---------- */
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.card-label {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--yellow-text);
+  margin-bottom: 20px;
+}
+
+/* The improvement → capability → opportunity loop, as a closing line under the cards. */
+.value-cycle {
+  max-width: 760px;
+  margin: 48px 0 0;
+  padding-left: 20px;
+  border-left: 3px solid var(--yellow);
+  font-size: 1.1rem;
+  color: var(--black);
+}
+
 /* ---------- Approach ---------- */
 
 .steps {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 40px;
 }
+
+.section-cta { margin-top: 56px; }
 
 .step {
   padding-top: 28px;
@@ -430,12 +493,6 @@ ul, ol {
 }
 
 .step h3 { font-size: 1.4rem; }
-
-.section-dark .step-tagline {
-  color: var(--white);
-  font-weight: 500;
-  margin-bottom: 12px;
-}
 
 /* ---------- Why ---------- */
 
@@ -594,18 +651,10 @@ ul, ol {
 
 /* ---------- Responsive ---------- */
 
-@media (max-width: 1024px) {
-  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 40px; }
-  .hero-visual img { width: 260px; }
-}
-
 /* Nav collapses at 900px; hero and split layouts stack at the same breakpoint. */
-@media (max-width: 900px) {
-  :root { --section-spacing: 80px; }
-
+/* The menu collapses at 1024px: the Spanish labels are longer and need the room. */
+@media (max-width: 1024px) {
   .nav-toggle { display: block; }
-
-  .br-mobile { display: inline; }
 
   .site-nav {
     position: absolute;
@@ -627,6 +676,13 @@ ul, ol {
   }
   .site-nav a:not(.btn)::after { display: none; }
   .site-nav .btn { margin-top: 20px; }
+}
+
+@media (max-width: 900px) {
+  :root { --section-spacing: 80px; }
+
+  .br-mobile { display: inline; }
+  .hero-title { font-size: 2.4rem; }
 
   .hero { padding: 72px 0 88px; }
   .hero-grid { grid-template-columns: 1fr; }
@@ -638,6 +694,8 @@ ul, ol {
   .about-visual img { max-width: 220px; margin: 0; }
 
   .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .value-grid,
+  .steps { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
@@ -650,12 +708,12 @@ ul, ol {
   .brand img { height: 34px; }
 
   .hero { padding: 56px 0 72px; }
-  .hero-actions .btn { width: 100%; }
+  .hero-actions .btn,
+  .section-cta .btn { width: 100%; }
 
   .section-head { margin-bottom: 40px; }
 
   .service-grid,
-  .steps,
   .values { grid-template-columns: 1fr; }
 
   .card { padding: 28px 24px; }
