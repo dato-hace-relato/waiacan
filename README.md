@@ -53,7 +53,7 @@ python _src/build.py
 | `js/lang.js` | Colombia → Spanish routing and the remembered EN/ES choice |
 | `thanks.html`, `es/thanks.html` | Confirmation page after a no-JS form submission (`noindex`, generated) |
 | `404.html` | Not-found page in both languages (styles inlined, since it's served at any missing path) |
-| `images/logo/` | Web copies of the logos (horizontal, stacked, icon × full color / white / black; `waiacan-wordmark-header.svg` is the wordmark with the icon enlarged, used in the nav) |
+| `images/logo/` | Web copies of the logos (horizontal, stacked, wordmark, icon × full color / white / black). Lettering is Sofia Sans SemiBold, outlined; masters in `../Waiacan_Logo_SofiaSans/` |
 | `images/waiacan-og-image.png` | 1200×630 social share image |
 | `favicon.ico`, `favicon.svg`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` | Favicons: the original icon (same paths and stroke weights as `Waiacan_Icon_Black.svg`) on a yellow rounded square. `apple-touch-icon.png` is square because iOS rounds it itself |
 | `site.webmanifest`, `robots.txt`, `sitemap.xml` | Browser/SEO metadata |
