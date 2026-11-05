@@ -1,6 +1,7 @@
 # WAIACAN website
 
-Static one-page site for **WAIACAN — Business Innovation Powered by AI**, in English and Spanish.
+Static site for **WAIACAN — Business Innovation Powered by AI**, in English and Spanish:
+a home page and a projects page.
 Plain HTML, CSS and vanilla JS. One small Python script generates the two language versions;
 everything else in this folder is served as-is.
 
@@ -10,9 +11,11 @@ everything else in this folder is served as-is.
 | --- | --- | --- |
 | `https://waiacan.com/` | English | Everyone outside Colombia (also the `x-default`) |
 | `https://waiacan.com/es/` | Spanish | Visitors in Colombia |
+| `https://waiacan.com/projects/` | English | Projects page |
+| `https://waiacan.com/es/proyectos/` | Spanish | Projects page |
 
 `js/lang.js` handles the routing (same IP approach as sweat440.com, via the free GeoJS API):
-- Only the English home page redirects, and only to Spanish, when the visitor's IP is in
+- Only English pages redirect, and only to their Spanish version, when the visitor's IP is in
   Colombia. The Spanish page never redirects, so a shared `/es/` link always opens in Spanish.
 - The EN/ES switch (header and footer) is remembered in the browser and beats the IP check.
 - The redirect keeps the query string and `#section`, so UTM tags survive.
@@ -22,14 +25,21 @@ everything else in this folder is served as-is.
 
 ## Editing text (build step)
 
-`index.html`, `es/index.html`, `thanks.html` and `es/thanks.html` are **generated** — don't
-edit them by hand; the next build overwrites them.
+All the pages below are **generated** — don't edit them by hand; the next build overwrites them.
 
 | Source | Generates |
 | --- | --- |
-| `_src/template.html` (layout) + `_src/content/en.json` | `index.html` |
-| `_src/template.html` + `_src/content/es.json` | `es/index.html` |
+| `_src/template.html` + `_src/content/en.json` / `es.json` | `index.html` / `es/index.html` |
+| `_src/projects-template.html` + `en.json` / `es.json` + `projects-en.json` / `projects-es.json` | `projects/index.html` / `es/proyectos/index.html` |
 | `_src/thanks-template.html` + `en.json` / `es.json` | `thanks.html` / `es/thanks.html` |
+| `_src/partials/` (head, header, footer) | included in every page above with `{{> name}}` |
+
+- **Projects:** `_src/content/projects-en.json` / `projects-es.json` hold each project
+  (`challenge`, `solution`, `result`; a list inside `result` becomes bullet points) and the
+  three `teaser` cards on the home page. Both files must list the same projects (same `slug`s,
+  same order). The `slug` is the project's permanent anchor (`/projects/#<slug>`) and image name.
+- **Project images:** add `images/projects/<slug>.webp` and rebuild; see
+  `images/projects/README.md`. Until then each project shows an empty image slot.
 
 ```bash
 python _src/build.py
@@ -46,11 +56,14 @@ python _src/build.py
 
 | File | What it is |
 | --- | --- |
-| `index.html`, `es/index.html` | The site in English / Spanish (generated, see above) |
+| `index.html`, `es/index.html` | Home page in English / Spanish (generated, see above) |
+| `projects/index.html`, `es/proyectos/index.html` | Projects page (generated) |
+| `images/projects/` | Project images, one per project slug (see its README) |
 | `_src/` | Templates, text per language, and `build.py` |
 | `css/styles.css` | All styles. Brand colors, fonts and spacing are CSS variables in `:root` |
 | `js/main.js` | Mobile menu, header border on scroll, hero word rotator, footer year, contact form submit. UI text comes from `data-*` attributes, so it serves both languages |
 | `js/lang.js` | Colombia → Spanish routing and the remembered EN/ES choice |
+| `js/hero-flow.js` | Hero animation: tangled lines run through the yellow bulb (`images/logo/waiacan-bulb.svg`) and leave ordered with yellow nodes (canvas; still frame for reduced motion; paused off screen) |
 | `thanks.html`, `es/thanks.html` | Confirmation page after a no-JS form submission (`noindex`, generated) |
 | `404.html` | Not-found page in both languages (styles inlined, since it's served at any missing path) |
 | `images/logo/` | Web copies of the logos (horizontal, stacked, wordmark, icon × full color / white / black). Lettering is Sofia Sans SemiBold, outlined; masters in `../Waiacan_Logo_SofiaSans/` |
@@ -64,9 +77,14 @@ logos here have a tightened viewBox (less empty padding) so they size predictabl
 
 ## Brand rules
 
-- Colors: Yellow `#FFB900`, Black `#0A0A0A`, White, Soft Gray `#F5F5F5`, Medium Gray `#6B7280`, Light Gray `#E5E7EB`.
-- Roughly 70% white/light gray, 20% black, 10% yellow. Yellow marks actions and key ideas only.
-- Accent text on white uses the darker `--yellow-text` (`#A87600`) for legibility; bright yellow text only on black.
+- Dark theme (blue charcoal). Background `#151B23`, alternate sections and cards `#1E2631`, titles and main
+  text `#F5F5F5`, secondary text `#B8B8B8`, lines `#2A3441`. A faint `#222D3B` glow sits behind the hero symbol.
+- The only accent is the logo yellow `#FFB400`: buttons (with black text), the rotating word,
+  "AI", small labels and indicators, and the one yellow call-to-action card. No ochre/dark
+  yellow, and never a full yellow section.
+- The contact form is a white card (`--paper`) so typing stays comfortable.
+- Logos on the site use the white + yellow versions (`*-white-yellow.svg`). The icon's five
+  branch nodes are solid dots; the two bottom terminals keep their ring.
 - Logo lettering, headings, buttons and labels: Sofia Sans SemiBold (600). Body text: Inter Regular.
 - In the header and footer, "WAIACAN" is live text next to the icon image (`.brand-word`), not the drawn wordmark SVG.
 

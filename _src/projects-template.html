@@ -1,0 +1,67 @@
+<!doctype html>
+<!--
+  GENERATED FILE: do not edit projects/index.html or es/proyectos/index.html directly.
+  Source: _src/projects-template.html (layout) + _src/partials/ (head, header, footer)
+          + _src/content/{en,es}.json (page text) + _src/content/projects-{en,es}.json (projects).
+  Rebuild with: python _src/build.py
+-->
+<html lang="{{lang}}">
+<head>
+{{> head}}
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "url": "{{url}}",
+    "name": "{{meta_title}}",
+    "inLanguage": "{{lang}}",
+    "isPartOf": { "@id": "https://waiacan.com/#website" },
+    "about": { "@id": "https://waiacan.com/#organization" }
+  }
+  </script>
+</head>
+<body>
+{{> header}}
+
+  <main id="main">
+    <!-- PAGE INTRO -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">{{nav_projects}}</p>
+        <h1>{{projects_title}}</h1>
+        <p class="hero-lead">{{projects_lead}}</p>
+        <div class="hero-actions">
+          <a href="{{home_anchor}}#contact" class="btn btn-primary">{{hero_cta}} <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS: built from _src/content/projects-*.json. Each has an image slot (images/projects/<slug>.webp). -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="projects-list">
+{{projects_list}}
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING CALL TO ACTION -->
+    <section class="section">
+      <div class="container cta-block">
+        <h2>{{projects_final_title}}</h2>
+        <p>{{projects_final_p1}}</p>
+        <p>{{projects_final_p2}}</p>
+        <div class="hero-actions">
+          <a href="{{home_anchor}}#contact" class="btn btn-primary">{{hero_cta}} <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <p class="contact-email"><a href="mailto:santiago@waiacan.com">santiago@waiacan.com</a></p>
+      </div>
+    </section>
+  </main>
+
+{{> footer}}
+
+  <script src="{{root}}js/main.js?v=5" defer></script>
+</body>
+</html>

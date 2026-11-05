@@ -1,0 +1,107 @@
+{
+  "projects": [
+    {
+      "slug": "sweat440-business-intelligence",
+      "title": "Inteligencia de negocios para una red de franquicias.",
+      "meta": "SWEAT440 · Datos e inteligencia de negocios",
+      "challenge": [
+        "Consolidar información de múltiples plataformas y permitir que equipos corporativos y franquicias consultaran los datos correspondientes a sus responsabilidades."
+      ],
+      "solution": [
+        "Un portal de reportes que reúne información de Google Ads, Meta Ads, Google Analytics, Google Maps, Google Search Console e Instagram orgánico.",
+        "La plataforma incorpora gestión de usuarios y permisos para que cada perfil acceda a la información que le corresponde."
+      ],
+      "result": [
+        "Más de 45 franquicias conectadas a un mismo portal de inteligencia de negocios.",
+        "Una visión centralizada del desempeño, con acceso diferenciado para los distintos equipos y franquicias."
+      ]
+    },
+    {
+      "slug": "sweat440-website",
+      "title": "Un sitio web más rápido, con menores costos de operación.",
+      "meta": "SWEAT440 · Desarrollo web y automatización",
+      "challenge": [
+        "Reducir el costo y el esfuerzo de mantener un sitio de más de 500 páginas, mejorar su rendimiento y facilitar las actualizaciones de una red de estudios en crecimiento."
+      ],
+      "solution": [
+        "Migración de WordPress a una arquitectura de HTML estático, acompañada de flujos automatizados para actualizar ofertas, crear landing pages e incorporar nuevos estudios."
+      ],
+      "result": [
+        [
+          "PageSpeed: de 32–37 a 93–99 sobre 100.",
+          "Más del 90% de reducción en costos de hosting.",
+          "Más del 90% de reducción en costos de desarrollo y mantenimiento.",
+          "Más del 50% de reducción en tiempo de mantenimiento.",
+          "Más de 500 páginas migradas."
+        ],
+        "Una plataforma más ágil para los visitantes y más sencilla de gestionar para el equipo."
+      ]
+    },
+    {
+      "slug": "sweat440-advertising-automation",
+      "title": "Más capacidad para gestionar publicidad.",
+      "meta": "SWEAT440 · Automatización y tecnología para crecimiento",
+      "challenge": [
+        "Crear y gestionar campañas para una red creciente de estudios, manteniendo el control sobre las configuraciones y el desempeño de los anuncios."
+      ],
+      "solution": [
+        "Automatización de la creación y gestión de campañas, acompañada de tableros que identifican anuncios de bajo rendimiento y controles de calidad que señalan posibles errores de configuración."
+      ],
+      "result": [
+        "El tiempo de creación de campañas pasó de dos semanas a 1,5 días, atendiendo un 30% más de estudios.",
+        "La operación permite gestionar más de 60 cuentas publicitarias con una persona y libera capacidad equivalente al trabajo de una persona adicional."
+      ]
+    },
+    {
+      "slug": "sweat440-brand-monitoring",
+      "title": "Supervisión de marca en 45 cuentas de Instagram.",
+      "meta": "SWEAT440 · IA aplicada a operaciones",
+      "challenge": [
+        "Revisar el contenido publicado por una red de cuentas de Instagram para identificar posibles incumplimientos de los estándares de marca."
+      ],
+      "solution": [
+        "Una herramienta que audita publicaciones y señala contenido que requiere revisión, facilitando la supervisión de la red."
+      ],
+      "result": [
+        "45 cuentas auditadas, con una reducción de carga de trabajo estimada en media jornada laboral.",
+        "El equipo puede concentrar la revisión en las publicaciones señaladas y dedicar menos tiempo a inspeccionar cada cuenta manualmente."
+      ]
+    },
+    {
+      "slug": "dato-hace-relato",
+      "title": "De datos deportivos a historias visuales.",
+      "meta": "Dato Hace Relato · Proyecto propio · Analítica y herramientas de contenido",
+      "challenge": [
+        "Transformar grandes volúmenes de estadísticas deportivas en contenido visual que permita explicar partidos, comparar equipos y contar historias con datos."
+      ],
+      "solution": [
+        "Desarrollo de herramientas para extraer y analizar estadísticas avanzadas de partidos y competiciones, junto con un motor de visualización que genera gráficos animados.",
+        "El sistema permite crear gráficos de barras, tortas, líneas de tiempo, cohortes, tablas de posiciones y radares. También se desarrolló una reproducción visual para narrar la evolución de partidos de las fases eliminatorias del Mundial."
+      ],
+      "result": [
+        "Una capacidad propia para convertir datos deportivos en análisis y piezas audiovisuales.",
+        "Las herramientas se han utilizado en contenido publicado por Dato Hace Relato, conectando investigación, análisis y producción visual."
+      ]
+    }
+  ],
+  "teaser": [
+    {
+      "slug": "sweat440-website",
+      "title": "Un sitio más rápido. Menores costos.",
+      "text": "Más de 500 páginas migradas, una mejora de 32–37 a 93–99 en PageSpeed y una reducción superior al 90% en costos de hosting.",
+      "meta": "SWEAT440 · Desarrollo web y automatización"
+    },
+    {
+      "slug": "sweat440-business-intelligence",
+      "title": "Inteligencia de negocios para más de 45 franquicias.",
+      "text": "Múltiples fuentes de datos en un portal con usuarios y permisos para que cada equipo consulte la información que necesita.",
+      "meta": "SWEAT440 · Datos e inteligencia de negocios"
+    },
+    {
+      "slug": "sweat440-advertising-automation",
+      "title": "Campañas listas en 1,5 días.",
+      "text": "Automatización y controles de calidad que redujeron el tiempo de creación de campañas desde dos semanas, atendiendo un 30% más de estudios.",
+      "meta": "SWEAT440 · Tecnología para crecimiento"
+    }
+  ]
+}

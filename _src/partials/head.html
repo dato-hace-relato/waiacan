@@ -1,0 +1,31 @@
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}">
+  <link rel="canonical" href="{{url}}">
+  <link rel="alternate" hreflang="en" href="{{url_en}}">
+  <link rel="alternate" hreflang="es" href="{{url_es}}">
+  <link rel="alternate" hreflang="x-default" href="{{url_en}}">
+  <meta name="theme-color" content="#151B23">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WAIACAN">
+  <meta property="og:locale" content="{{og_locale}}">
+  <meta property="og:title" content="{{og_title}}">
+  <meta property="og:description" content="{{og_description}}">
+  <meta property="og:url" content="{{url}}">
+  <meta property="og:image" content="https://waiacan.com/images/waiacan-og-image.png?v=3">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="{{root}}favicon.ico?v=3" sizes="48x48">
+  <link rel="icon" href="{{root}}favicon.svg?v=3" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{root}}apple-touch-icon.png?v=3">
+  <link rel="manifest" href="{{root}}site.webmanifest">
+
+  <!-- Language routing (Colombia → Spanish). Runs before render so a redirect happens as early as possible. -->
+  <script src="{{root}}js/lang.js?v=2" data-page-lang="{{lang}}" data-alt-href="{{alt_href}}"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sofia+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="{{root}}css/styles.css?v=23">

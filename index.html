@@ -1,7 +1,8 @@
 <!doctype html>
 <!--
   GENERATED FILE: do not edit index.html or es/index.html directly.
-  Source: _src/template.html (layout) + _src/content/{en,es}.json (text).
+  Source: _src/template.html (layout) + _src/partials/ (head, header, footer)
+          + _src/content/{en,es}.json (text) + _src/content/projects-{en,es}.json (teaser).
   Rebuild with: python _src/build.py
 -->
 <html lang="en">
@@ -14,7 +15,7 @@
   <link rel="alternate" hreflang="en" href="https://waiacan.com/">
   <link rel="alternate" hreflang="es" href="https://waiacan.com/es/">
   <link rel="alternate" hreflang="x-default" href="https://waiacan.com/">
-  <meta name="theme-color" content="#FFB900">
+  <meta name="theme-color" content="#151B23">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="WAIACAN">
@@ -22,12 +23,12 @@
   <meta property="og:title" content="WAIACAN | Discover What You Can Build with AI.">
   <meta property="og:description" content="Improve your operations, build new capabilities, and open new opportunities for growth.">
   <meta property="og:url" content="https://waiacan.com/">
-  <meta property="og:image" content="https://waiacan.com/images/waiacan-og-image.png?v=2">
+  <meta property="og:image" content="https://waiacan.com/images/waiacan-og-image.png?v=3">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="favicon.ico?v=2" sizes="48x48">
-  <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="icon" href="favicon.ico?v=3" sizes="48x48">
+  <link rel="icon" href="favicon.svg?v=3" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
   <link rel="manifest" href="site.webmanifest">
 
   <!-- Language routing (Colombia → Spanish). Runs before render so a redirect happens as early as possible. -->
@@ -36,7 +37,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sofia+Sans:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=13">
+  <link rel="stylesheet" href="css/styles.css?v=23">
 
   <script type="application/ld+json">
   {
@@ -79,14 +80,15 @@
     <div class="container header-inner">
       <!-- Logo: the icon is an image; "WAIACAN" is live text in Sofia Sans SemiBold (see .brand-word). -->
       <a href="./" class="brand" aria-label="WAIACAN home">
-        <img class="brand-icon" src="images/logo/waiacan-icon-full-color.svg" alt="" width="375" height="427">
+        <img class="brand-icon" src="images/logo/waiacan-icon-white-yellow.svg?v=3" alt="" width="375" height="427">
         <span class="brand-word" aria-hidden="true">W<span class="brand-ai">AI</span>ACAN</span>
       </a>
+      <!-- Section links point at the home page ( is empty there, "../" on inner pages). -->
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <a href="#approach">How We Work</a>
         <a href="#expertise">What We Do</a>
+        <a href="projects/">Projects</a>
         <a href="#why">Why WAIACAN</a>
-        <a href="#about">About</a>
         <a href="#contact" class="btn btn-primary btn-sm">Let’s Talk</a>
       </nav>
       <div class="header-actions">
@@ -105,7 +107,7 @@
         <div class="hero-content">
           <p class="eyebrow">Business Innovation Powered by AI</p>
           <!-- The first word is the real heading text; main.js turns it into a vertical word rotator. -->
-          <h1 class="hero-title" style="--h1-em: 10.65">Discover What You Can<br> <span class="text-accent rotator" data-words="Build,Achieve,Automate,Optimize,Create">Build</span> <br class="br-mobile">with <span class="text-accent">AI</span>.</h1>
+          <h1 class="hero-title" style="--h1-em: 10.65">Discover What You Can<br> <span class="text-accent rotator" data-words="Build,Achieve,Automate,Optimize,Create">Build</span> with <span class="text-accent">AI</span>.</h1>
           <p class="hero-lead">Improve your operations, build new capabilities, and open new opportunities for growth.</p>
           <p class="hero-description">We combine business expertise and technology to make it happen.</p>
           <div class="hero-actions">
@@ -114,54 +116,49 @@
           <p class="hero-note">You don’t need to know the solution. Start with a challenge or an idea.</p>
         </div>
         <div class="hero-visual" aria-hidden="true">
-          <img src="images/logo/waiacan-icon-full-color.svg" alt="" width="375" height="427">
+          <img src="images/logo/waiacan-bulb.svg?v=1" alt="" width="375" height="427">
         </div>
+      </div>
+      <!-- Animation: tangled lines run through the yellow bulb and leave ordered (js/hero-flow.js).
+           Desktop: behind the whole hero. Phones: a band under the call to action with its own bulb. -->
+      <div class="hero-flow" aria-hidden="true">
+        <canvas></canvas>
+        <img class="hero-flow-icon" src="images/logo/waiacan-bulb.svg?v=1" alt="" width="375" height="427">
       </div>
     </section>
 
-    <!-- THE CHALLENGE -->
-    <section class="section section-light" id="challenge">
-      <div class="container split">
-        <div>
-          <h2>You know your business could do more. Where do you start?</h2>
-        </div>
-        <div class="prose">
-          <p>Your team spends too much time on manual tasks. Information is scattered across tools. Promising ideas stay on hold because they seem too expensive or complex to develop.</p>
-          <p>You know technology could help. But you need clarity on where to apply it, what investment makes sense, and how to put it to work.</p>
-          <p class="callout">At WAIACAN, we work with you to identify the most valuable opportunities and turn them into solutions your team can use.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- IMPROVE / EXPAND -->
-    <section class="section" id="value">
+    <!-- IMPROVE / EXPAND: three numbered steps, then the condensed "why" and the loop -->
+    <section class="section section-alt" id="value">
       <div class="container">
         <div class="section-head">
           <h2>Improve What You Do. Expand What You Can Do.</h2>
         </div>
-        <div class="value-grid">
-          <article class="card">
-            <span class="card-label">Efficiency</span>
+        <ol class="value-steps">
+          <li class="card value-step">
+            <div class="value-step-head"><span class="value-step-num">01</span><span class="card-label">Efficiency</span></div>
             <h3>Do what you already do, better.</h3>
             <p>Reduce manual work, errors, and delays. Connect your systems and simplify processes so your team can spend more time on work that creates value.</p>
-          </article>
-          <article class="card">
-            <span class="card-label">Capabilities</span>
+          </li>
+          <li class="card value-step">
+            <div class="value-step-head"><span class="value-step-num">02</span><span class="card-label">Capabilities</span></div>
             <h3>Do what’s beyond your reach today.</h3>
             <p>Put your information to work, explore scenarios, and build tools to make better decisions, personalize service, or respond to new needs.</p>
-          </article>
-          <article class="card">
-            <span class="card-label">Opportunities</span>
+          </li>
+          <li class="card value-step">
+            <div class="value-step-head"><span class="value-step-num">03</span><span class="card-label">Opportunities</span></div>
             <h3>Turn new possibilities into business opportunities.</h3>
             <p>Develop and test products, services, and experiences that previously required too much time, money, or complexity.</p>
-          </article>
+          </li>
+        </ol>
+        <div class="value-note">
+          <p>Manual tasks, scattered information, ideas on hold because they seem too costly or complex. Technology can help; the question is where to start. At WAIACAN, we find the most valuable opportunities with you and turn them into solutions your team can use.</p>
+          <p class="value-cycle">Each improvement unlocks new capabilities, each capability opens new opportunities, and each opportunity brings something new to improve.</p>
         </div>
-        <p class="value-cycle">An initial improvement can unlock new capabilities. Those capabilities can create new opportunities. And each opportunity brings something new to improve.</p>
       </div>
     </section>
 
     <!-- APPROACH -->
-    <section class="section section-dark" id="approach">
+    <section class="section" id="approach">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">How We Work</p>
@@ -191,7 +188,7 @@
     </section>
 
     <!-- EXPERTISE -->
-    <section class="section section-light" id="expertise">
+    <section class="section section-alt" id="expertise">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">What We Do</p>
@@ -231,8 +228,43 @@
       </div>
     </section>
 
+    <!-- PROJECTS TEASER: three highlights; cards are built from _src/content/projects-*.json -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Projects</p>
+          <h2>Solutions in Action.</h2>
+          <p>From scattered information to clearer decisions. From manual processes to greater operating capacity.</p>
+          <p class="byline">Projects led and developed by Santiago Estrada, founder of WAIACAN.</p>
+        </div>
+        <div class="teaser-grid">
+          <a class="card teaser-card" href="projects/#sweat440-website">
+            <div class="teaser-media is-empty" aria-hidden="true"><!-- Image slot: add images/projects/sweat440-website.webp (16:10, about 1600 px wide) and rebuild --><img src="images/logo/waiacan-bulb.svg?v=1" alt="" width="375" height="427" loading="lazy"></div>
+            <h3>A Faster Website. Lower Costs.</h3>
+            <p>More than 500 pages migrated, PageSpeed scores improved from 32–37 to 93–99, and hosting costs reduced by more than 90%.</p>
+            <p class="teaser-meta">SWEAT440 · Web Development &amp; Automation</p>
+          </a>
+          <a class="card teaser-card" href="projects/#sweat440-business-intelligence">
+            <div class="teaser-media is-empty" aria-hidden="true"><!-- Image slot: add images/projects/sweat440-business-intelligence.webp (16:10, about 1600 px wide) and rebuild --><img src="images/logo/waiacan-bulb.svg?v=1" alt="" width="375" height="427" loading="lazy"></div>
+            <h3>Business Intelligence for 45+ Franchises.</h3>
+            <p>Multiple data sources brought together in one portal, with user permissions that give each team access to the information they need.</p>
+            <p class="teaser-meta">SWEAT440 · Data &amp; Business Intelligence</p>
+          </a>
+          <a class="card teaser-card" href="projects/#sweat440-advertising-automation">
+            <div class="teaser-media is-empty" aria-hidden="true"><!-- Image slot: add images/projects/sweat440-advertising-automation.webp (16:10, about 1600 px wide) and rebuild --><img src="images/logo/waiacan-bulb.svg?v=1" alt="" width="375" height="427" loading="lazy"></div>
+            <h3>Campaigns Ready in 1.5 Days.</h3>
+            <p>Automation and quality checks reduced campaign creation time from two weeks while serving 30% more studios.</p>
+            <p class="teaser-meta">SWEAT440 · Growth Technology</p>
+          </a>
+        </div>
+        <div class="section-cta">
+          <a href="projects/" class="btn btn-primary">Explore the Projects <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
     <!-- WHY WAIACAN -->
-    <section class="section" id="why">
+    <section class="section section-alt" id="why">
       <div class="container split">
         <div>
           <p class="eyebrow">Why WAIACAN</p>
@@ -259,28 +291,8 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="section section-light" id="about">
-      <div class="container split split-about">
-        <div class="about-visual" aria-hidden="true">
-          <img src="images/logo/waiacan-logo-stacked-full-color.svg?v=2" alt="" width="609" height="566" loading="lazy">
-        </div>
-        <div>
-          <p class="eyebrow">About</p>
-          <h2>Rooted in Colombia. Focused on What’s Possible.</h2>
-          <div class="prose">
-            <p>WAIACAN takes its name from the <em>guayacán</em>, a tree known for its vibrant yellow blossoms and deep roots in Colombia.</p>
-            <p>The name also evokes a question: what can you achieve when business knowledge, creativity, and technology come together?</p>
-            <p>WAIACAN was founded by Santiago Estrada, an administrative engineer with a master’s degree in entrepreneurship from Rotterdam School of Management and more than 15 years of experience in marketing, growth, and technology.</p>
-            <p>His background combines founding businesses and leading teams with developing business tools, data systems, and automations.</p>
-            <p>Based in Colombia, we bring an international perspective and a belief that practical technology should be accessible to more businesses.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CONTACT -->
-    <section class="section section-dark" id="contact">
+    <section class="section" id="contact">
       <div class="container contact-grid">
         <div class="contact-intro">
           <p class="eyebrow">Contact</p>
@@ -322,9 +334,15 @@
               <input id="cf-email" name="email" type="email" autocomplete="email" required>
             </div>
           </div>
-          <div class="field">
-            <label for="cf-company">Company <span class="optional">(optional)</span></label>
-            <input id="cf-company" name="company" type="text" autocomplete="organization">
+          <div class="field-row">
+            <div class="field">
+              <label for="cf-phone">Phone <span class="optional">(optional)</span></label>
+              <input id="cf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+            </div>
+            <div class="field">
+              <label for="cf-company">Company <span class="optional">(optional)</span></label>
+              <input id="cf-company" name="company" type="text" autocomplete="organization">
+            </div>
           </div>
           <div class="field">
             <label for="cf-message">What would you like to improve or make possible?</label>
@@ -340,12 +358,13 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <a href="./" class="brand brand-footer" aria-label="WAIACAN home">
-        <img class="brand-icon" src="images/logo/waiacan-icon-white.svg" alt="" width="375" height="427" loading="lazy">
+        <img class="brand-icon" src="images/logo/waiacan-icon-white-yellow.svg?v=3" alt="" width="375" height="427" loading="lazy">
         <span class="brand-word" aria-hidden="true">W<span class="brand-ai">AI</span>ACAN</span>
       </a>
       <p class="footer-tagline">Business Innovation Powered by AI</p>
       <p class="footer-meta">
         <a href="mailto:santiago@waiacan.com">santiago@waiacan.com</a>
+        <a href="projects/">Projects</a>
         <a href="es/" hreflang="es" lang="es" data-set-lang="es">Español</a>
         <span>&copy; <span id="year">2026</span> WAIACAN</span>
       </p>
@@ -353,5 +372,6 @@
   </footer>
 
   <script src="js/main.js?v=5" defer></script>
+  <script src="js/hero-flow.js?v=4" defer></script>
 </body>
 </html>

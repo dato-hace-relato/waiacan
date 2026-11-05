@@ -4,11 +4,11 @@
 <path d="M 207.67 393.52 L 222.72 393.52 L 237.22 379.03 L 280.60 379.03 L 280.60 313.01 C 280.60 308.88 278.96 304.91 276.04 301.98 L 232.87 258.82" fill="none" stroke="#0A0A0A" stroke-width="12.00" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M 401.95 393.52 L 386.90 393.52 L 372.40 379.03 L 329.02 379.03 L 329.02 313.01 C 329.02 308.88 330.67 304.91 333.59 301.98 L 376.76 258.82" fill="none" stroke="#0A0A0A" stroke-width="12.00" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M 261.88 189.98 L 261.88 202.68 C 261.88 204.64 262.66 206.52 264.05 207.91 L 304.81 248.67 L 345.58 207.91 C 346.97 206.52 347.74 204.64 347.74 202.68 L 347.74 189.98" fill="none" stroke="#0A0A0A" stroke-width="12.00" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M 325.82 94.00 C 325.82 82.40 316.42 72.99 304.81 72.99 C 293.21 72.99 283.80 82.40 283.80 94.00 C 283.80 105.61 293.21 115.01 304.81 115.01 C 316.42 115.01 325.82 105.61 325.82 94.00 Z" fill="none" stroke="#0A0A0A" stroke-width="12.00" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M 282.89 168.97 C 282.89 157.37 273.49 147.96 261.88 147.96 C 250.28 147.96 240.87 157.37 240.87 168.97 C 240.87 180.58 250.28 189.98 261.88 189.98 C 273.49 189.98 282.89 180.58 282.89 168.97 Z" fill="none" stroke="#0A0A0A" stroke-width="12.00" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M 368.75 168.97 C 368.75 157.37 359.35 147.96 347.74 147.96 C 336.14 147.96 326.73 157.37 326.73 168.97 C 326.73 180.58 336.14 189.98 347.74 189.98 C 359.35 189.98 368.75 180.58 368.75 168.97 Z" fill="none" stroke="#0A0A0A" stroke-width="12.00" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M 239.02 243.96 C 239.02 232.36 229.62 222.95 218.01 222.95 C 206.41 222.95 197.00 232.36 197.00 243.96 C 197.00 255.57 206.41 264.97 218.01 264.97 C 229.62 264.97 239.02 255.57 239.02 243.96 Z" fill="none" stroke="#0A0A0A" stroke-width="12.00" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M 412.62 243.96 C 412.62 232.36 403.22 222.95 391.61 222.95 C 380.01 222.95 370.60 232.36 370.60 243.96 C 370.60 255.57 380.01 264.97 391.61 264.97 C 403.22 264.97 412.62 255.57 412.62 243.96 Z" fill="none" stroke="#0A0A0A" stroke-width="12.00" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="304.81" cy="94.00" r="27.01" fill="#0A0A0A"/>
+<circle cx="261.88" cy="168.97" r="27.01" fill="#0A0A0A"/>
+<circle cx="347.74" cy="168.97" r="27.01" fill="#0A0A0A"/>
+<circle cx="218.01" cy="243.96" r="27.01" fill="#0A0A0A"/>
+<circle cx="391.61" cy="243.96" r="27.01" fill="#0A0A0A"/>
 <path d="M 207.67 393.52 C 207.67 383.12 199.24 374.68 188.83 374.68 C 178.43 374.68 169.99 383.12 169.99 393.52 C 169.99 403.93 178.43 412.36 188.83 412.36 C 199.24 412.36 207.67 403.93 207.67 393.52 Z" fill="none" stroke="#0A0A0A" stroke-width="12.00" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M 439.63 393.52 C 439.63 383.12 431.20 374.68 420.79 374.68 C 410.39 374.68 401.95 383.12 401.95 393.52 C 401.95 403.93 410.39 412.36 420.79 412.36 C 431.20 412.36 439.63 403.93 439.63 393.52 Z" fill="none" stroke="#0A0A0A" stroke-width="12.00" stroke-linecap="round" stroke-linejoin="round"/>
 <!-- WAIACAN lettering: Sofia Sans SemiBold (600), outlined -->

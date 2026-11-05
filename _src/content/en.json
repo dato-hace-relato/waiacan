@@ -13,7 +13,6 @@
   "nav_approach": "How We Work",
   "nav_expertise": "What We Do",
   "nav_why": "Why WAIACAN",
-  "nav_about": "About",
   "nav_cta": "Let’s Talk",
   "alt_lang": "es",
   "alt_label": "ES",
@@ -31,11 +30,7 @@
   "hero_cta": "Let’s Talk About Your Business",
   "hero_note": "You don’t need to know the solution. Start with a challenge or an idea.",
 
-  "problem_title": "You know your business could do more. Where do you start?",
-  "problem_p1": "Your team spends too much time on manual tasks. Information is scattered across tools. Promising ideas stay on hold because they seem too expensive or complex to develop.",
-  "problem_p2": "You know technology could help. But you need clarity on where to apply it, what investment makes sense, and how to put it to work.",
-  "problem_p3": "At WAIACAN, we work with you to identify the most valuable opportunities and turn them into solutions your team can use.",
-
+  "value_intro": "Manual tasks, scattered information, ideas on hold because they seem too costly or complex. Technology can help; the question is where to start. At WAIACAN, we find the most valuable opportunities with you and turn them into solutions your team can use.",
   "value_title": "Improve What You Do. Expand What You Can Do.",
   "value1_label": "Efficiency",
   "value1_title": "Do what you already do, better.",
@@ -46,7 +41,7 @@
   "value3_label": "Opportunities",
   "value3_title": "Turn new possibilities into business opportunities.",
   "value3_text": "Develop and test products, services, and experiences that previously required too much time, money, or complexity.",
-  "value_cycle": "An initial improvement can unlock new capabilities. Those capabilities can create new opportunities. And each opportunity brings something new to improve.",
+  "value_cycle": "Each improvement unlocks new capabilities, each capability opens new opportunities, and each opportunity brings something new to improve.",
 
   "approach_title": "A Clear Path From Idea to Everyday Use.",
   "step1_title": "Understand and Prioritize",
@@ -79,13 +74,6 @@
   "why4_title": "We Work With Your Team",
   "why4_text": "We involve the people who will use the solution so it addresses their needs and fits into their work.",
 
-  "about_title": "Rooted in Colombia. Focused on What’s Possible.",
-  "about_p1": "WAIACAN takes its name from the <em>guayacán</em>, a tree known for its vibrant yellow blossoms and deep roots in Colombia.",
-  "about_p2": "The name also evokes a question: what can you achieve when business knowledge, creativity, and technology come together?",
-  "about_p3": "WAIACAN was founded by Santiago Estrada, an administrative engineer with a master’s degree in entrepreneurship from Rotterdam School of Management and more than 15 years of experience in marketing, growth, and technology.",
-  "about_p4": "His background combines founding businesses and leading teams with developing business tools, data systems, and automations.",
-  "about_p5": "Based in Colombia, we bring an international perspective and a belief that practical technology should be accessible to more businesses.",
-
   "contact_eyebrow": "Contact",
   "contact_title": "Let’s Explore Your Next Business Challenge.",
   "contact_p1": "Tell us about a process you want to improve, a limitation you want to overcome, or an opportunity you want to explore.",
@@ -95,6 +83,7 @@
   "form_label": "Contact form",
   "form_name": "Name",
   "form_email": "Email",
+  "form_phone": "Phone",
   "form_company": "Company",
   "form_optional": "(optional)",
   "form_message": "What would you like to improve or make possible?",
@@ -107,5 +96,21 @@
   "form_activation": "This form is waiting for activation. Please check the santiago@waiacan.com inbox for the FormSubmit activation email.",
 
   "thanks_page_title": "Thank You",
-  "thanks_back": "Back to home"
+  "thanks_back": "Back to home",
+
+  "nav_projects": "Projects",
+  "teaser_title": "Solutions in Action.",
+  "teaser_lead": "From scattered information to clearer decisions. From manual processes to greater operating capacity.",
+  "teaser_byline": "Projects led and developed by Santiago Estrada, founder of WAIACAN.",
+  "teaser_cta": "Explore the Projects",
+  "projects_meta_title": "Projects | WAIACAN",
+  "projects_meta_description": "Selected projects in business intelligence, web development, advertising automation, and AI for operations, with measurable results.",
+  "projects_title": "Solutions in Action.",
+  "projects_lead": "Less manual work. New capabilities. More possibilities for business.",
+  "label_challenge": "The Challenge",
+  "label_solution": "The Solution",
+  "label_result": "The Result",
+  "projects_final_title": "What Could We Make Possible for Your Business?",
+  "projects_final_p1": "Start with a process that takes too much time, information you need to put to work, or an idea you haven’t been able to develop.",
+  "projects_final_p2": "We identify the opportunity, build the solution, and support its implementation."
 }
