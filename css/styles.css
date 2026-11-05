@@ -19,7 +19,7 @@
   --gray-dark-text: #B4B4B4;
   --gray-dark-line: #262626;
 
-  --font-heading: 'Nunito', system-ui, sans-serif; /* closest web match to the WAIACAN wordmark */
+  --font-heading: 'Sofia Sans', system-ui, sans-serif; /* logo lettering and titles, SemiBold (600) */
   --font-body: 'Inter', system-ui, sans-serif;
 
   --radius-sm: 8px;
@@ -60,7 +60,7 @@ img {
 
 h1, h2, h3 {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.01em;
   margin: 0 0 24px;
@@ -68,7 +68,7 @@ h1, h2, h3 {
 
 h1 { font-size: clamp(2.75rem, 6vw, 5.25rem); }
 h2 { font-size: clamp(2rem, 4vw, 3.25rem); }
-h3 { font-size: 1.3rem; letter-spacing: 0; font-weight: 700; margin-bottom: 12px; }
+h3 { font-size: 1.3rem; letter-spacing: 0; font-weight: 600; margin-bottom: 12px; }
 
 p {
   margin: 0 0 20px;
@@ -229,7 +229,7 @@ ul, ol {
 .lang-switch {
   font-family: var(--font-heading);
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.06em;
   padding: 6px 10px;
   border: 1px solid var(--gray-300);
@@ -238,10 +238,28 @@ ul, ol {
 }
 .lang-switch:hover { border-color: var(--black); background: var(--gray-50); }
 
-.brand img {
-  height: 40px; /* letters stay 26px tall; the extra height is the larger icon */
+/* Logo: icon image + "WAIACAN" as live text. The icon stands ~1.5× the letter height,
+   matching the proportions of the drawn wordmark. */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-icon {
+  height: 40px;
   width: auto;
 }
+.brand-word {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.85rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--black);
+}
+.brand-ai { color: var(--yellow); }
+.brand-footer .brand-icon { height: 32px; }
+.brand-footer .brand-word { font-size: 1.45rem; color: var(--white); }
 
 .site-nav {
   display: flex;
@@ -342,11 +360,11 @@ ul, ol {
   drops to its own line (.br-mobile) so no word ever re-wraps the heading.
 */
 .hero-title {
-  font-weight: 800;
-  /* Line 1 is ~11.4em wide in English; the calc keeps the widest line on one line next to
+  font-weight: 600;
+  /* Line 1 is ~10.2em wide in English; the calc keeps the widest line on one line next to
      the hero icon (viewport − gutters − icon − gap, ÷ --h1-em) down to the 900px breakpoint.
      --h1-em is set per language in _src/content/*.json, since line widths differ. */
-  font-size: clamp(2rem, calc((100vw - 390px) / var(--h1-em, 11.9)), 4.2rem);
+  font-size: clamp(2rem, calc((100vw - 390px) / var(--h1-em, 10.65)), 4.5rem);
   letter-spacing: 0.01em;
 }
 
@@ -441,7 +459,7 @@ ul, ol {
 .card-label {
   font-family: var(--font-heading);
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--yellow-text);
@@ -632,7 +650,6 @@ ul, ol {
   gap: 24px;
 }
 
-.footer-logo { height: 24px; width: auto; }
 
 .site-footer p {
   margin: 0;
@@ -682,7 +699,7 @@ ul, ol {
   :root { --section-spacing: 80px; }
 
   .br-mobile { display: inline; }
-  .hero-title { font-size: 2.4rem; }
+  .hero-title { font-size: 2.6rem; }
 
   .hero { padding: 72px 0 88px; }
   .hero-grid { grid-template-columns: 1fr; }
@@ -705,7 +722,8 @@ ul, ol {
     --header-height: 68px;
   }
 
-  .brand img { height: 34px; }
+  .brand-icon { height: 34px; }
+  .brand-word { font-size: 1.55rem; }
 
   .hero { padding: 56px 0 72px; }
   .hero-actions .btn,

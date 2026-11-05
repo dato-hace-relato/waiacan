@@ -67,7 +67,8 @@ logos here have a tightened viewBox (less empty padding) so they size predictabl
 - Colors: Yellow `#FFB900`, Black `#0A0A0A`, White, Soft Gray `#F5F5F5`, Medium Gray `#6B7280`, Light Gray `#E5E7EB`.
 - Roughly 70% white/light gray, 20% black, 10% yellow. Yellow marks actions and key ideas only.
 - Accent text on white uses the darker `--yellow-text` (`#A87600`) for legibility; bright yellow text only on black.
-- Headings/buttons/labels: Nunito (closest web font to the wordmark lettering). Body: Inter.
+- Logo lettering, headings, buttons and labels: Sofia Sans SemiBold (600). Body text: Inter Regular.
+- In the header and footer, "WAIACAN" is live text next to the icon image (`.brand-word`), not the drawn wordmark SVG.
 
 ## Contact form
 

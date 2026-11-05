@@ -35,8 +35,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap">
-  <link rel="stylesheet" href="{{root}}css/styles.css?v=11">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sofia+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="{{root}}css/styles.css?v=13">
 
   <script type="application/ld+json">
   {
@@ -77,8 +77,10 @@
 
   <header class="site-header">
     <div class="container header-inner">
+      <!-- Logo: the icon is an image; "WAIACAN" is live text in Sofia Sans SemiBold (see .brand-word). -->
       <a href="./" class="brand" aria-label="{{home_label}}">
-        <img src="{{root}}images/logo/waiacan-wordmark-header.svg?v=2" alt="WAIACAN" width="900" height="206">
+        <img class="brand-icon" src="{{root}}images/logo/waiacan-icon-full-color.svg" alt="" width="375" height="427">
+        <span class="brand-word" aria-hidden="true">W<span class="brand-ai">AI</span>ACAN</span>
       </a>
       <nav id="site-nav" class="site-nav" aria-label="{{nav_label}}">
         <a href="#approach">{{nav_approach}}</a>
@@ -337,8 +339,9 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a href="./" aria-label="{{home_label}}">
-        <img src="{{root}}images/logo/waiacan-wordmark-white.svg" alt="WAIACAN" width="835" height="133" class="footer-logo" loading="lazy">
+      <a href="./" class="brand brand-footer" aria-label="{{home_label}}">
+        <img class="brand-icon" src="{{root}}images/logo/waiacan-icon-white.svg" alt="" width="375" height="427" loading="lazy">
+        <span class="brand-word" aria-hidden="true">W<span class="brand-ai">AI</span>ACAN</span>
       </a>
       <p class="footer-tagline">{{hero_eyebrow}}</p>
       <p class="footer-meta">

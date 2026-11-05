@@ -35,8 +35,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap">
-  <link rel="stylesheet" href="../css/styles.css?v=11">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sofia+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="../css/styles.css?v=13">
 
   <script type="application/ld+json">
   {
@@ -77,8 +77,10 @@
 
   <header class="site-header">
     <div class="container header-inner">
+      <!-- Logo: the icon is an image; "WAIACAN" is live text in Sofia Sans SemiBold (see .brand-word). -->
       <a href="./" class="brand" aria-label="Inicio de WAIACAN">
-        <img src="../images/logo/waiacan-wordmark-header.svg?v=2" alt="WAIACAN" width="900" height="206">
+        <img class="brand-icon" src="../images/logo/waiacan-icon-full-color.svg" alt="" width="375" height="427">
+        <span class="brand-word" aria-hidden="true">W<span class="brand-ai">AI</span>ACAN</span>
       </a>
       <nav id="site-nav" class="site-nav" aria-label="Principal">
         <a href="#approach">Cómo trabajamos</a>
@@ -103,7 +105,7 @@
         <div class="hero-content">
           <p class="eyebrow">Innovación empresarial impulsada por IA</p>
           <!-- The first word is the real heading text; main.js turns it into a vertical word rotator. -->
-          <h1 class="hero-title" style="--h1-em: 12.1">Descubre lo que puedes<br> <span class="text-accent rotator" data-words="crear,lograr,automatizar,optimizar,construir">crear</span> <br class="br-mobile">con <span class="text-accent">IA</span>.</h1>
+          <h1 class="hero-title" style="--h1-em: 11.0">Descubre lo que puedes<br> <span class="text-accent rotator" data-words="crear,lograr,automatizar,optimizar,construir">crear</span> <br class="br-mobile">con <span class="text-accent">IA</span>.</h1>
           <p class="hero-lead">Mejora tu operación, desarrolla nuevas capacidades y abre oportunidades de crecimiento.</p>
           <p class="hero-description">Combinamos conocimiento de negocio y tecnología para hacerlo realidad.</p>
           <div class="hero-actions">
@@ -337,8 +339,9 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a href="./" aria-label="Inicio de WAIACAN">
-        <img src="../images/logo/waiacan-wordmark-white.svg" alt="WAIACAN" width="835" height="133" class="footer-logo" loading="lazy">
+      <a href="./" class="brand brand-footer" aria-label="Inicio de WAIACAN">
+        <img class="brand-icon" src="../images/logo/waiacan-icon-white.svg" alt="" width="375" height="427" loading="lazy">
+        <span class="brand-word" aria-hidden="true">W<span class="brand-ai">AI</span>ACAN</span>
       </a>
       <p class="footer-tagline">Innovación empresarial impulsada por IA</p>
       <p class="footer-meta">
